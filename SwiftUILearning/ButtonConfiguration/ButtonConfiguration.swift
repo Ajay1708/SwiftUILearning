@@ -1,8 +1,8 @@
 //
-//  ButtonModifiers.swift
+//  ButtonStyle.swift
 //  SwiftUILearning
 //
-//  Created by Venkata Ajay Sai Nellori on 26/01/24.
+//  Created by Venkata Ajay Sai Nellori on 27/01/24.
 //
 
 import Foundation
@@ -19,6 +19,14 @@ struct DefaultButtonViewModifier: ViewModifier {
             .background(backgroundColor)
             .clipShape(.rect(cornerRadius: 10))
             .shadow(radius: 10)
+    }
+}
+
+struct PressableButtonSyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.9 : 1)
+            .opacity(configuration.isPressed ? 0.9 : 1)
     }
 }
 

@@ -7,8 +7,18 @@
 
 import Foundation
 import SwiftUI
+
+// MARK: - MODIFIER EXTENSIONS
 extension View {
     func withDefaultButtonFormatting(backgroundColor: Color) -> some View {
         modifier(DefaultButtonViewModifier(backgroundColor: backgroundColor))
     }
+}
+
+// MARK: - BUTTON STYLE EXTENSIONS
+extension View {
+    func withPressableStyle() -> some View {
+        buttonStyle(PressableButtonSyle())
+    }
+    
 }
