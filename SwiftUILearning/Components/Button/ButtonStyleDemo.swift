@@ -11,6 +11,11 @@ struct ButtonStyleDemo: View {
     // The default style of button is borderless
     var body: some View {
         VStack(spacing: 20) {
+            Button("Custom Press Style") {
+                
+            }
+            .withPressableStyle()
+            
             customButton(text: "Default Style(i.e BorderLess)") {
                 
             }
@@ -39,11 +44,6 @@ struct ButtonStyleDemo: View {
                 
             }
             .buttonStyle(.automatic)
-            
-            customButton(text: "Press Style") {
-                
-            }
-            .withPressableStyle()
         }
         .padding()
     }

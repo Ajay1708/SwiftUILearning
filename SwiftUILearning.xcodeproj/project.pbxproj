@@ -10,21 +10,25 @@
 		2D2FB0452B64D05D0019EFED /* ButtonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FB0442B64D05D0019EFED /* ButtonConfiguration.swift */; };
 		2D2FB04C2B64D1510019EFED /* CustomButtonDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FB04B2B64D1510019EFED /* CustomButtonDemo.swift */; };
 		2D2FB0502B64D5C70019EFED /* ButtonStyleDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FB04F2B64D5C70019EFED /* ButtonStyleDemo.swift */; };
+		2D2FB0522B6522D20019EFED /* TransitionDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FB0512B6522D20019EFED /* TransitionDemo.swift */; };
+		2D2FB0582B6653EC0019EFED /* CustomTransitionDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FB0572B6653EC0019EFED /* CustomTransitionDemo.swift */; };
+		2D2FB05C2B665A3F0019EFED /* CustomTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FB05B2B665A3F0019EFED /* CustomTransitions.swift */; };
 		2D5C472A2B637C7F00E541C0 /* SwiftUILearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5C47292B637C7F00E541C0 /* SwiftUILearningApp.swift */; };
 		2D5C472E2B637C8100E541C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5C472D2B637C8100E541C0 /* Assets.xcassets */; };
 		2D5C47312B637C8100E541C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5C47302B637C8100E541C0 /* Preview Assets.xcassets */; };
-		2D5C473C2B637EE500E541C0 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5C473B2B637EE500E541C0 /* ViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D2FB0442B64D05D0019EFED /* ButtonConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfiguration.swift; sourceTree = "<group>"; };
 		2D2FB04B2B64D1510019EFED /* CustomButtonDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonDemo.swift; sourceTree = "<group>"; };
 		2D2FB04F2B64D5C70019EFED /* ButtonStyleDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleDemo.swift; sourceTree = "<group>"; };
+		2D2FB0512B6522D20019EFED /* TransitionDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionDemo.swift; sourceTree = "<group>"; };
+		2D2FB0572B6653EC0019EFED /* CustomTransitionDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionDemo.swift; sourceTree = "<group>"; };
+		2D2FB05B2B665A3F0019EFED /* CustomTransitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitions.swift; sourceTree = "<group>"; };
 		2D5C47262B637C7F00E541C0 /* SwiftUILearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUILearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5C47292B637C7F00E541C0 /* SwiftUILearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUILearningApp.swift; sourceTree = "<group>"; };
 		2D5C472D2B637C8100E541C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D5C47302B637C8100E541C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2D5C473B2B637EE500E541C0 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +61,29 @@
 		2D2FB04E2B64D5B40019EFED /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				2D2FB0432B64D02E0019EFED /* ButtonConfiguration */,
 				2D2FB04B2B64D1510019EFED /* CustomButtonDemo.swift */,
 				2D2FB04F2B64D5C70019EFED /* ButtonStyleDemo.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		2D2FB0552B652CC30019EFED /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				2D2FB0562B652CCE0019EFED /* Transitions */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		2D2FB0562B652CCE0019EFED /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				2D2FB05B2B665A3F0019EFED /* CustomTransitions.swift */,
+				2D2FB0512B6522D20019EFED /* TransitionDemo.swift */,
+				2D2FB0572B6653EC0019EFED /* CustomTransitionDemo.swift */,
+			);
+			path = Transitions;
 			sourceTree = "<group>";
 		};
 		2D5C471D2B637C7F00E541C0 = {
@@ -82,9 +105,8 @@
 		2D5C47282B637C7F00E541C0 /* SwiftUILearning */ = {
 			isa = PBXGroup;
 			children = (
+				2D2FB0552B652CC30019EFED /* Animations */,
 				2D2FB04D2B64D5AC0019EFED /* Components */,
-				2D2FB0432B64D02E0019EFED /* ButtonConfiguration */,
-				2D5C473A2B637ED200E541C0 /* Extensions */,
 				2D5C47292B637C7F00E541C0 /* SwiftUILearningApp.swift */,
 				2D5C472D2B637C8100E541C0 /* Assets.xcassets */,
 				2D5C472F2B637C8100E541C0 /* Preview Content */,
@@ -98,14 +120,6 @@
 				2D5C47302B637C8100E541C0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		2D5C473A2B637ED200E541C0 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				2D5C473B2B637EE500E541C0 /* ViewExtensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,10 +193,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D2FB04C2B64D1510019EFED /* CustomButtonDemo.swift in Sources */,
+				2D2FB0522B6522D20019EFED /* TransitionDemo.swift in Sources */,
 				2D2FB0452B64D05D0019EFED /* ButtonConfiguration.swift in Sources */,
-				2D5C473C2B637EE500E541C0 /* ViewExtensions.swift in Sources */,
+				2D2FB0582B6653EC0019EFED /* CustomTransitionDemo.swift in Sources */,
 				2D2FB0502B64D5C70019EFED /* ButtonStyleDemo.swift in Sources */,
 				2D5C472A2B637C7F00E541C0 /* SwiftUILearningApp.swift in Sources */,
+				2D2FB05C2B665A3F0019EFED /* CustomTransitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
