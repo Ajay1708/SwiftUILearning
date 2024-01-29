@@ -13,6 +13,7 @@
 		2D2FB0522B6522D20019EFED /* TransitionDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FB0512B6522D20019EFED /* TransitionDemo.swift */; };
 		2D2FB0582B6653EC0019EFED /* CustomTransitionDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FB0572B6653EC0019EFED /* CustomTransitionDemo.swift */; };
 		2D2FB05C2B665A3F0019EFED /* CustomTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FB05B2B665A3F0019EFED /* CustomTransitions.swift */; };
+		2D2FB05F2B66A8E50019EFED /* MatchedGeometryDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FB05E2B66A8E50019EFED /* MatchedGeometryDemo.swift */; };
 		2D5C472A2B637C7F00E541C0 /* SwiftUILearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5C47292B637C7F00E541C0 /* SwiftUILearningApp.swift */; };
 		2D5C472E2B637C8100E541C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5C472D2B637C8100E541C0 /* Assets.xcassets */; };
 		2D5C47312B637C8100E541C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5C47302B637C8100E541C0 /* Preview Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		2D2FB0512B6522D20019EFED /* TransitionDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionDemo.swift; sourceTree = "<group>"; };
 		2D2FB0572B6653EC0019EFED /* CustomTransitionDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionDemo.swift; sourceTree = "<group>"; };
 		2D2FB05B2B665A3F0019EFED /* CustomTransitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitions.swift; sourceTree = "<group>"; };
+		2D2FB05E2B66A8E50019EFED /* MatchedGeometryDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryDemo.swift; sourceTree = "<group>"; };
 		2D5C47262B637C7F00E541C0 /* SwiftUILearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUILearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5C47292B637C7F00E541C0 /* SwiftUILearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUILearningApp.swift; sourceTree = "<group>"; };
 		2D5C472D2B637C8100E541C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		2D2FB0552B652CC30019EFED /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				2D2FB05D2B66A89E0019EFED /* MatchedGeometry */,
 				2D2FB0562B652CCE0019EFED /* Transitions */,
 			);
 			path = Animations;
@@ -84,6 +87,14 @@
 				2D2FB0572B6653EC0019EFED /* CustomTransitionDemo.swift */,
 			);
 			path = Transitions;
+			sourceTree = "<group>";
+		};
+		2D2FB05D2B66A89E0019EFED /* MatchedGeometry */ = {
+			isa = PBXGroup;
+			children = (
+				2D2FB05E2B66A8E50019EFED /* MatchedGeometryDemo.swift */,
+			);
+			path = MatchedGeometry;
 			sourceTree = "<group>";
 		};
 		2D5C471D2B637C7F00E541C0 = {
@@ -195,6 +206,7 @@
 				2D2FB04C2B64D1510019EFED /* CustomButtonDemo.swift in Sources */,
 				2D2FB0522B6522D20019EFED /* TransitionDemo.swift in Sources */,
 				2D2FB0452B64D05D0019EFED /* ButtonConfiguration.swift in Sources */,
+				2D2FB05F2B66A8E50019EFED /* MatchedGeometryDemo.swift in Sources */,
 				2D2FB0582B6653EC0019EFED /* CustomTransitionDemo.swift in Sources */,
 				2D2FB0502B64D5C70019EFED /* ButtonStyleDemo.swift in Sources */,
 				2D5C472A2B637C7F00E541C0 /* SwiftUILearningApp.swift in Sources */,
