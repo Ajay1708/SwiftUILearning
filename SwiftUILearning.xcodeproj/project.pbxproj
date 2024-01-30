@@ -18,6 +18,8 @@
 		2D5C472E2B637C8100E541C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5C472D2B637C8100E541C0 /* Assets.xcassets */; };
 		2D5C47312B637C8100E541C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5C47302B637C8100E541C0 /* Preview Assets.xcassets */; };
 		2D931AEA2B68035900622C75 /* AutomaticGrammarAgreement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D931AE92B68035900622C75 /* AutomaticGrammarAgreement.swift */; };
+		2D931AED2B68083F00622C75 /* CustomShapesDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D931AEC2B68083F00622C75 /* CustomShapesDemo.swift */; };
+		2D931AEF2B68A4D600622C75 /* CustomShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D931AEE2B68A4D600622C75 /* CustomShapes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		2D5C472D2B637C8100E541C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D5C47302B637C8100E541C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D931AE92B68035900622C75 /* AutomaticGrammarAgreement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticGrammarAgreement.swift; sourceTree = "<group>"; };
+		2D931AEC2B68083F00622C75 /* CustomShapesDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShapesDemo.swift; sourceTree = "<group>"; };
+		2D931AEE2B68A4D600622C75 /* CustomShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShapes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 		2D5C47282B637C7F00E541C0 /* SwiftUILearning */ = {
 			isa = PBXGroup;
 			children = (
+				2D931AEB2B68080600622C75 /* Shapes */,
 				2D931AE82B68033200622C75 /* SwiftHacks */,
 				2D2FB0552B652CC30019EFED /* Animations */,
 				2D2FB04D2B64D5AC0019EFED /* Components */,
@@ -142,6 +147,15 @@
 				2D931AE92B68035900622C75 /* AutomaticGrammarAgreement.swift */,
 			);
 			path = SwiftHacks;
+			sourceTree = "<group>";
+		};
+		2D931AEB2B68080600622C75 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				2D931AEC2B68083F00622C75 /* CustomShapesDemo.swift */,
+				2D931AEE2B68A4D600622C75 /* CustomShapes.swift */,
+			);
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,11 +229,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D2FB04C2B64D1510019EFED /* CustomButtonDemo.swift in Sources */,
+				2D931AEF2B68A4D600622C75 /* CustomShapes.swift in Sources */,
 				2D2FB0522B6522D20019EFED /* TransitionDemo.swift in Sources */,
 				2D2FB0452B64D05D0019EFED /* ButtonConfiguration.swift in Sources */,
 				2D2FB05F2B66A8E50019EFED /* MatchedGeometryDemo.swift in Sources */,
 				2D2FB0582B6653EC0019EFED /* CustomTransitionDemo.swift in Sources */,
 				2D2FB0502B64D5C70019EFED /* ButtonStyleDemo.swift in Sources */,
+				2D931AED2B68083F00622C75 /* CustomShapesDemo.swift in Sources */,
 				2D5C472A2B637C7F00E541C0 /* SwiftUILearningApp.swift in Sources */,
 				2D931AEA2B68035900622C75 /* AutomaticGrammarAgreement.swift in Sources */,
 				2D2FB05C2B665A3F0019EFED /* CustomTransitions.swift in Sources */,
