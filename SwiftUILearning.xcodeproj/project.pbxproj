@@ -122,6 +122,7 @@
 		2D5C47282B637C7F00E541C0 /* SwiftUILearning */ = {
 			isa = PBXGroup;
 			children = (
+				2D6013822B6E029700380822 /* Map */,
 				2D931AEB2B68080600622C75 /* Shapes */,
 				2D931AE82B68033200622C75 /* SwiftHacks */,
 				2D2FB0552B652CC30019EFED /* Animations */,
@@ -139,6 +140,21 @@
 				2D5C47302B637C8100E541C0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2D6013822B6E029700380822 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				2D6013832B6E029F00380822 /* Views */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		2D6013832B6E029F00380822 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		2D931AE82B68033200622C75 /* SwiftHacks */ = {
