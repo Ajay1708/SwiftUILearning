@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomSliderDemo: View {
     @State var sliderMinimumValue: Float = 1
     @State var sliderMaximumValue: Float = 12
-    @State var stepCount: Float = 2
+    @State var stepCount: Float = 1
     @State var sliderCurrentValue: String = "1"
     
     private let minimumTrackTintColor = UIColor(red: 119/255, green: 69/255, blue: 255/255, alpha: 1)
@@ -55,7 +55,6 @@ struct CustomSliderDemo: View {
                 sliderCurrentValue = "1"
                 sliderMinimumValue = 1
                 sliderMaximumValue = 6
-                stepCount = 1
             })
         }
     }

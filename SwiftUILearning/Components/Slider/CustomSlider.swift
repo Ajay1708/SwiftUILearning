@@ -106,6 +106,7 @@ struct CustomSlider: UIViewRepresentable {
         }
     }
     
+    // makeCoordinator will only be called once during initialisation of CustomSlider
     func makeCoordinator() -> Coordinator {
         Coordinator(
             stepCount: stepCount,
