@@ -12,6 +12,7 @@ struct CustomSliderDemo: View {
     @State var sliderMaximumValue: Float = 12
     @State var stepCount: Float = 1
     @State var sliderCurrentValue: String = "1"
+    @State var sliderProgressValue: CGFloat = 0
     
     private let minimumTrackTintColor = UIColor(red: 119/255, green: 69/255, blue: 255/255, alpha: 1)
     private let maximumTrackTintColor = UIColor(red: 60/255, green: 51/255, blue: 87/255, alpha: 1)
@@ -31,7 +32,8 @@ struct CustomSliderDemo: View {
                 thumbImageNormal: thumbImage,
                 thumbImageHighlighted: thumbImage,
                 trackLineHeight: 8,
-                sliderCurrentValue: $sliderCurrentValue
+                sliderCurrentValue: $sliderCurrentValue,
+                sliderProgressValue: $sliderProgressValue
             )
             .onChange(of: sliderCurrentValue) {
                 let generator = UIImpactFeedbackGenerator(style: .heavy)
@@ -46,7 +48,13 @@ struct CustomSliderDemo: View {
                 Text("\(sliderMaximumValue.toString())")
             }
             
-            Spacer()
+            LottieView.init(
+                urlString: K.LottieResource.LottieUrl.noteStack,
+                loopMode: .playOnce,
+                enableProgressMode: true,
+                progressTime: sliderProgressValue,
+                animationSpeed: 10
+            )
         }
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 32)

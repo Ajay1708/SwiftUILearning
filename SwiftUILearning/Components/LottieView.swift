@@ -11,18 +11,34 @@ enum AnimationFileExtension: String {
     case lottie = "lottie"
     case json = "json"
 }
+/// LottieView plays the animation file
 struct LottieView: UIViewRepresentable {
     private let urlString: String?
     private let fileNameWithExtension: String?
     private let loopMode: LottieLoopMode
+    private let enableProgressMode: Bool
+    private let progressTime: AnimationProgressTime
+    private let animationSpeed: CGFloat
     private let contentMode: UIView.ContentMode
     private let onAnimationEnd: () -> Void
     private let animationDuration: ((_ value: Double) -> Void)?
     
+    /// - Parameters:
+    ///   - urlString: The urlString to load the animation from
+    ///   - fileNameWithExtension: The name of the lottie file with the lottie extension
+    ///   - loopMode: The name of the lottie file with the lottie extension
+    ///   - enableProgressMode: The name of the lottie file with the lottie extension The end progress of the animation.
+    ///   - progressTime: The end progress of the animation. Max value is 1
+    ///   - animationSpeed: Sets the speed of the animation playback. Defaults to 1
+    ///   - contentMode: Options to specify how a view adjusts its content when its size changes.
+    ///   - animationDuration: Observe the duration in seconds of the animation.
     init(
         urlString: String? = nil,
         fileNameWithExtension: String? = nil,
         loopMode: LottieLoopMode = .loop,
+        enableProgressMode: Bool = false,
+        progressTime: AnimationProgressTime = 1,
+        animationSpeed: CGFloat = 1,
         contentMode: UIView.ContentMode = .scaleAspectFit,
         onAnimationEnd: @escaping () -> Void = {},
         animationDuration: ((_ value: TimeInterval) -> Void)? = nil
@@ -30,6 +46,9 @@ struct LottieView: UIViewRepresentable {
         self.urlString = urlString
         self.fileNameWithExtension = fileNameWithExtension
         self.loopMode = loopMode
+        self.enableProgressMode = enableProgressMode
+        self.progressTime = progressTime
+        self.animationSpeed = animationSpeed
         self.contentMode = contentMode
         self.onAnimationEnd = onAnimationEnd
         self.animationDuration = animationDuration
@@ -82,7 +101,13 @@ struct LottieView: UIViewRepresentable {
         return view
     }
     
-    func updateUIView(_ uiView: UIViewType, context: Context) {}
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+        if let animationView = uiView.subviews.first as? LottieAnimationView {
+            if enableProgressMode {
+                animationView.play(toProgress: progressTime)
+            }
+        }
+    }
     
     private func configure(animationView: inout LottieAnimationView, animation: LottieAnimation?) {
         if let animation {
@@ -90,11 +115,14 @@ struct LottieView: UIViewRepresentable {
         }
         animationView.contentMode = contentMode
         animationView.loopMode = loopMode
+        animationView.animationSpeed = animationSpeed
         if let duration = animationView.animation?.duration {
             self.animationDuration?(duration)
         }
-        animationView.play { _ in
-            onAnimationEnd()
+        if !enableProgressMode {
+            animationView.play { _ in
+                onAnimationEnd()
+            }
         }
     }
     

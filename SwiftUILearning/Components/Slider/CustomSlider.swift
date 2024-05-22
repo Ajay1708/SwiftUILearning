@@ -24,8 +24,25 @@ struct CustomSlider: UIViewRepresentable {
     private let trackLineHeight: CGFloat
     
     @Binding var sliderCurrentValue: String
+    @Binding var sliderProgressValue: CGFloat
     
-    init(minimumValue: Float, maximumValue: Float,
+    /// - Parameters:
+    ///   - minimumValue: The minimum value of the slider. The default value of this property is 0.0.
+    ///   - maximumValue: The maximum value of the slider. The default value of this property is 1.0.
+    ///   - stepCount: Step count refers to the number of discrete intervals or increments within a range.
+    ///   - minimumTrackTintColor: The color used to tint the default minimum track images.
+    ///   - maximumTrackTintColor: The color used to tint the default maximum track images.
+    ///   - thumbTintColor: The color used to tint the default thumb images.
+    ///   - minimumValueImage: The image that represents the slider’s minimum value.
+    ///   - maximumValueImage: The image representing the slider’s maximum value.
+    ///   - thumbImageNormal: Assigns a thumb image to the normal state.
+    ///   - thumbImageHighlighted: Assigns a thumb image to the highlighted state.
+    ///   - trackLineHeight: The track height of the slider
+    ///   - sliderCurrentValue: The slider's current value ranges from minimumValue to maximumValue
+    ///   - sliderProgressValue: The slider's progress value ranges from 0 to 1
+    /// - Note: When you specify a custom thumb image, the slider ignores the custom thumb tint color, if any.
+    init(minimumValue: Float,
+         maximumValue: Float,
          stepCount: Float = 1,
          minimumTrackTintColor: UIColor = UIColor.systemBlue,
          maximumTrackTintColor: UIColor = UIColor.systemGray4,
@@ -35,7 +52,8 @@ struct CustomSlider: UIViewRepresentable {
          thumbImageNormal: UIImage? = nil,
          thumbImageHighlighted: UIImage? = nil,
          trackLineHeight: CGFloat = 4,
-         sliderCurrentValue: Binding<String>
+         sliderCurrentValue: Binding<String>,
+         sliderProgressValue: Binding<CGFloat>
     ) {
         self.minimumValue = minimumValue
         self.maximumValue = maximumValue
@@ -49,11 +67,12 @@ struct CustomSlider: UIViewRepresentable {
         self.thumbImageHighlighted = thumbImageHighlighted
         self.trackLineHeight = trackLineHeight
         self._sliderCurrentValue = sliderCurrentValue
+        self._sliderProgressValue = sliderProgressValue
     }
     
+    /// Configuration of the UISlider happens here
+    /// - Note: We are configuring only once because makeUIView will be called once during initialisation
     func makeUIView(context: Context) -> UISlider {
-        // Here we are configuring the UISlider view
-        // Note: We are configuring only once because makeUIView will be called once during initialisation
         let slider = MySlider(frame: .zero)
         slider.trackLineHeight = trackLineHeight
         slider.minimumTrackTintColor = minimumTrackTintColor
@@ -74,43 +93,59 @@ struct CustomSlider: UIViewRepresentable {
     }
     
     
+    /// when ever there are changes outside this struct we are updating those changes here
+    /// * Example: if we have a toggle in a view on tap of that toggle we are changing the minimum value and maximum value and slider current value. Those values can be updated here
     func updateUIView(_ uiView: UISlider, context: Context) {
-        // when ever there are changes outside this struct we are updating those changes here
-        // For Example if we have a toggle in a view on tap of that toggle we are changing the minimum value and maximum value and slider current value. Those values can be updated here
         uiView.minimumValue = minimumValue
         uiView.maximumValue = maximumValue
         uiView.value = sliderCurrentValue.toFloat()
         
         // Don't forgot to update the coordinator properties here
         context.coordinator.stepCount = stepCount
+        context.coordinator.minimumValue = minimumValue
+        context.coordinator.maximumValue = maximumValue
     }
         
     final class Coordinator: NSObject {
         var stepCount: Float
+        var minimumValue: Float
+        var maximumValue: Float
         var sliderCurrentValue: Binding<String>
-        
+        var sliderProgressValue: Binding<CGFloat>
         init(
             stepCount: Float,
-            sliderCurrentValue: Binding<String>
+            minimumValue: Float,
+            maximumValue: Float,
+            sliderCurrentValue: Binding<String>,
+            sliderProgressValue: Binding<CGFloat>
         ) {
             self.stepCount = stepCount
+            self.minimumValue = minimumValue
+            self.maximumValue = maximumValue
             self.sliderCurrentValue = sliderCurrentValue
+            self.sliderProgressValue = sliderProgressValue
         }
         
         @objc func sliderValueChanged(_ slider: UISlider) {
             let sliderCurrentValueRounded = round(slider.value / stepCount) * stepCount
+            slider.value = sliderCurrentValueRounded
+
             let sliderCurrentValueFormatted = sliderCurrentValueRounded.toString()
             self.sliderCurrentValue.wrappedValue = sliderCurrentValueFormatted
             
-            slider.value = sliderCurrentValueRounded
+            let sliderProgressValue = CGFloat((slider.value - minimumValue) / (maximumValue - minimumValue))
+            self.sliderProgressValue.wrappedValue = sliderProgressValue
         }
     }
     
-    // makeCoordinator will only be called once during initialisation of CustomSlider
+    /// Coordinator will be initialised here. makeCoordinator will only be called once during initialisation of CustomSlider
     func makeCoordinator() -> Coordinator {
         Coordinator(
             stepCount: stepCount,
-            sliderCurrentValue: $sliderCurrentValue
+            minimumValue: minimumValue,
+            maximumValue: maximumValue,
+            sliderCurrentValue: $sliderCurrentValue,
+            sliderProgressValue: $sliderProgressValue
         )
     }
 }
@@ -130,7 +165,8 @@ struct CustomSlider_Previews: PreviewProvider {
         CustomSlider(
             minimumValue: 1,
             maximumValue: 10,
-            sliderCurrentValue: .constant("1")
+            sliderCurrentValue: .constant("1"),
+            sliderProgressValue: .constant(0)
         )
         .padding(.horizontal, 16)
         
@@ -143,7 +179,8 @@ struct CustomSlider_Previews: PreviewProvider {
             maximumValueImage: UIImage(systemName: "sun.min.fill"),
             thumbImageNormal: UIImage(named: "thumbImage"),
             thumbImageHighlighted: UIImage(systemName: "thumbImage"),
-            sliderCurrentValue: .constant("1")
+            sliderCurrentValue: .constant("1"),
+            sliderProgressValue: .constant(0)
         )
         .padding(.horizontal, 16)
     }
