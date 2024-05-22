@@ -11,7 +11,7 @@ struct CustomSliderDemo: View {
     @State var sliderMinimumValue: Float = 1
     @State var sliderMaximumValue: Float = 12
     @State var stepCount: Float = 1
-    @State var sliderCurrentValue: String = "1"
+    @State var sliderCurrentValue: Float = 1
     @State var sliderProgressValue: CGFloat = 0
     
     private let minimumTrackTintColor = UIColor(red: 119/255, green: 69/255, blue: 255/255, alpha: 1)
@@ -21,7 +21,7 @@ struct CustomSliderDemo: View {
         VStack {
             Spacer()
             
-            Text("Slider Value \(sliderCurrentValue)")
+            Text("Slider Value \(sliderCurrentValue.toString())")
                         
             CustomSlider(
                 minimumValue: sliderMinimumValue,
@@ -60,9 +60,12 @@ struct CustomSliderDemo: View {
         .padding(.horizontal, 32)
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
-                sliderCurrentValue = "1"
                 sliderMinimumValue = 1
                 sliderMaximumValue = 6
+                sliderCurrentValue = sliderMinimumValue
+                
+                let sliderProgressValue = CGFloat((sliderCurrentValue - sliderMinimumValue) / (sliderMaximumValue - sliderMinimumValue))
+                self.sliderProgressValue = sliderProgressValue
             })
         }
     }

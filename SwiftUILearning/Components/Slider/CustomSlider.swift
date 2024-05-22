@@ -23,7 +23,7 @@ struct CustomSlider: UIViewRepresentable {
     private let thumbImageHighlighted: UIImage?
     private let trackLineHeight: CGFloat
     
-    @Binding var sliderCurrentValue: String
+    @Binding var sliderCurrentValue: Float
     @Binding var sliderProgressValue: CGFloat
     
     /// - Parameters:
@@ -52,7 +52,7 @@ struct CustomSlider: UIViewRepresentable {
          thumbImageNormal: UIImage? = nil,
          thumbImageHighlighted: UIImage? = nil,
          trackLineHeight: CGFloat = 4,
-         sliderCurrentValue: Binding<String>,
+         sliderCurrentValue: Binding<Float>,
          sliderProgressValue: Binding<CGFloat>
     ) {
         self.minimumValue = minimumValue
@@ -98,7 +98,7 @@ struct CustomSlider: UIViewRepresentable {
     func updateUIView(_ uiView: UISlider, context: Context) {
         uiView.minimumValue = minimumValue
         uiView.maximumValue = maximumValue
-        uiView.value = sliderCurrentValue.toFloat()
+        uiView.value = sliderCurrentValue
         
         // Don't forgot to update the coordinator properties here
         context.coordinator.stepCount = stepCount
@@ -110,13 +110,13 @@ struct CustomSlider: UIViewRepresentable {
         var stepCount: Float
         var minimumValue: Float
         var maximumValue: Float
-        var sliderCurrentValue: Binding<String>
+        var sliderCurrentValue: Binding<Float>
         var sliderProgressValue: Binding<CGFloat>
         init(
             stepCount: Float,
             minimumValue: Float,
             maximumValue: Float,
-            sliderCurrentValue: Binding<String>,
+            sliderCurrentValue: Binding<Float>,
             sliderProgressValue: Binding<CGFloat>
         ) {
             self.stepCount = stepCount
@@ -129,9 +129,7 @@ struct CustomSlider: UIViewRepresentable {
         @objc func sliderValueChanged(_ slider: UISlider) {
             let sliderCurrentValueRounded = round(slider.value / stepCount) * stepCount
             slider.value = sliderCurrentValueRounded
-
-            let sliderCurrentValueFormatted = sliderCurrentValueRounded.toString()
-            self.sliderCurrentValue.wrappedValue = sliderCurrentValueFormatted
+            self.sliderCurrentValue.wrappedValue = sliderCurrentValueRounded
             
             let sliderProgressValue = CGFloat((slider.value - minimumValue) / (maximumValue - minimumValue))
             self.sliderProgressValue.wrappedValue = sliderProgressValue
@@ -165,7 +163,7 @@ struct CustomSlider_Previews: PreviewProvider {
         CustomSlider(
             minimumValue: 1,
             maximumValue: 10,
-            sliderCurrentValue: .constant("1"),
+            sliderCurrentValue: .constant(1),
             sliderProgressValue: .constant(0)
         )
         .padding(.horizontal, 16)
@@ -179,7 +177,7 @@ struct CustomSlider_Previews: PreviewProvider {
             maximumValueImage: UIImage(systemName: "sun.min.fill"),
             thumbImageNormal: UIImage(named: "thumbImage"),
             thumbImageHighlighted: UIImage(systemName: "thumbImage"),
-            sliderCurrentValue: .constant("1"),
+            sliderCurrentValue: .constant(1),
             sliderProgressValue: .constant(0)
         )
         .padding(.horizontal, 16)
