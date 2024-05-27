@@ -11,7 +11,12 @@ import SwiftUI
 struct SwiftUILearningApp: App {
     var body: some Scene {
         WindowGroup {
-            CustomSliderDemo()
+            LinearProgressViewDemo(
+                progressColor: Color.purple,
+                trackColor: Color.gray.opacity(0.5),
+                height: 10,
+                viewModel: LinearProgressViewModel(durationInSeconds: 10, initialProgressValue: 0.25, reverse: true)
+            )
         }
     }
 }

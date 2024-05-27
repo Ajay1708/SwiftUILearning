@@ -29,6 +29,16 @@
 		2DCC84C82BF9DCC400991C3A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2DCC84C72BF9DCC400991C3A /* Lottie */; };
 		2DD43F262BF87D2E00218CDC /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD43F252BF87D2E00218CDC /* CustomSlider.swift */; };
 		2DD43F282BF87E6900218CDC /* CustomSliderDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD43F272BF87E6900218CDC /* CustomSliderDemo.swift */; };
+		CBCDBDB82BFF82D500E26C77 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDB72BFF82D500E26C77 /* PagerView.swift */; };
+		CBCDBDBA2BFF986200E26C77 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDB92BFF986200E26C77 /* Model.swift */; };
+		CBCDBDBE2BFF9E2F00E26C77 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CBCDBDBD2BFF9E2F00E26C77 /* Kingfisher */; };
+		CBCDBDC02C00404800E26C77 /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDBF2C00404800E26C77 /* CustomPageControl.swift */; };
+		CBCDBDC32C01AD3900E26C77 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDC22C01AD3900E26C77 /* ColorExtensions.swift */; };
+		CBCDBDC52C01C9BA00E26C77 /* PagerViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDC42C01C9BA00E26C77 /* PagerViewDemo.swift */; };
+		CBCDBDC92C02482E00E26C77 /* PagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDC82C02482E00E26C77 /* PagerViewModel.swift */; };
+		CBCDBDCE2C0316A300E26C77 /* LinearProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDCD2C0316A300E26C77 /* LinearProgressView.swift */; };
+		CBCDBDD52C035CCB00E26C77 /* LinearProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDD42C035CCB00E26C77 /* LinearProgressViewModel.swift */; };
+		CBCDBDD72C03999500E26C77 /* LinearProgressViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDD62C03999500E26C77 /* LinearProgressViewDemo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +64,15 @@
 		2DCC84C42BF9DC0E00991C3A /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		2DD43F252BF87D2E00218CDC /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		2DD43F272BF87E6900218CDC /* CustomSliderDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSliderDemo.swift; sourceTree = "<group>"; };
+		CBCDBDB72BFF82D500E26C77 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
+		CBCDBDB92BFF986200E26C77 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CBCDBDBF2C00404800E26C77 /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
+		CBCDBDC22C01AD3900E26C77 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		CBCDBDC42C01C9BA00E26C77 /* PagerViewDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewDemo.swift; sourceTree = "<group>"; };
+		CBCDBDC82C02482E00E26C77 /* PagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewModel.swift; sourceTree = "<group>"; };
+		CBCDBDCD2C0316A300E26C77 /* LinearProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressView.swift; sourceTree = "<group>"; };
+		CBCDBDD42C035CCB00E26C77 /* LinearProgressViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearProgressViewModel.swift; sourceTree = "<group>"; };
+		CBCDBDD62C03999500E26C77 /* LinearProgressViewDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressViewDemo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBCDBDBE2BFF9E2F00E26C77 /* Kingfisher in Frameworks */,
 				2DCC84C82BF9DCC400991C3A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,11 +108,12 @@
 		2D2FB04D2B64D5AC0019EFED /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2DCC84C42BF9DC0E00991C3A /* LottieView.swift */,
-				2D2998ED2BFA32020018057B /* LottieViewAnimationDemo.swift */,
-				2DCC84C32BF9B92300991C3A /* Slider */,
 				2D2FB04E2B64D5B40019EFED /* Button */,
-				2D5C47292B637C7F00E541C0 /* SwiftUILearningApp.swift */,
+				CBCDBDB62BFF82A100E26C77 /* Lottie */,
+				2DCC84C32BF9B92300991C3A /* Slider */,
+				CBCDBDBB2BFF987F00E26C77 /* PagerView */,
+				CBCDBDC12C004D8500E26C77 /* PageControl */,
+				CBCDBDD12C031F3400E26C77 /* ProgressView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -160,6 +181,7 @@
 				2D931AE82B68033200622C75 /* SwiftHacks */,
 				2D2FB0552B652CC30019EFED /* Animations */,
 				2D2FB04D2B64D5AC0019EFED /* Components */,
+				2D5C47292B637C7F00E541C0 /* SwiftUILearningApp.swift */,
 				2D5C472D2B637C8100E541C0 /* Assets.xcassets */,
 				2D5C472F2B637C8100E541C0 /* Preview Content */,
 			);
@@ -195,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				2DCC84C12BF99F7900991C3A /* FloatExtensions.swift */,
+				CBCDBDC22C01AD3900E26C77 /* ColorExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +229,84 @@
 				2DD43F272BF87E6900218CDC /* CustomSliderDemo.swift */,
 			);
 			path = Slider;
+			sourceTree = "<group>";
+		};
+		CBCDBDB62BFF82A100E26C77 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				2DCC84C42BF9DC0E00991C3A /* LottieView.swift */,
+				2D2998ED2BFA32020018057B /* LottieViewAnimationDemo.swift */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		CBCDBDBB2BFF987F00E26C77 /* PagerView */ = {
+			isa = PBXGroup;
+			children = (
+				CBCDBDC62C01E29000E26C77 /* Model */,
+				CBCDBDC72C01E29600E26C77 /* View */,
+				CBCDBDCA2C02483400E26C77 /* ViewModel */,
+			);
+			path = PagerView;
+			sourceTree = "<group>";
+		};
+		CBCDBDC12C004D8500E26C77 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				CBCDBDBF2C00404800E26C77 /* CustomPageControl.swift */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
+		CBCDBDC62C01E29000E26C77 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CBCDBDB92BFF986200E26C77 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CBCDBDC72C01E29600E26C77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBCDBDB72BFF82D500E26C77 /* PagerView.swift */,
+				CBCDBDC42C01C9BA00E26C77 /* PagerViewDemo.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CBCDBDCA2C02483400E26C77 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CBCDBDC82C02482E00E26C77 /* PagerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CBCDBDD12C031F3400E26C77 /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				CBCDBDD82C03ACE500E26C77 /* View */,
+				CBCDBDD92C03ACEA00E26C77 /* ViewModel */,
+			);
+			path = ProgressView;
+			sourceTree = "<group>";
+		};
+		CBCDBDD82C03ACE500E26C77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBCDBDCD2C0316A300E26C77 /* LinearProgressView.swift */,
+				CBCDBDD62C03999500E26C77 /* LinearProgressViewDemo.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CBCDBDD92C03ACEA00E26C77 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CBCDBDD42C035CCB00E26C77 /* LinearProgressViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +327,7 @@
 			name = SwiftUILearning;
 			packageProductDependencies = (
 				2DCC84C72BF9DCC400991C3A /* Lottie */,
+				CBCDBDBD2BFF9E2F00E26C77 /* Kingfisher */,
 			);
 			productName = SwiftUILearning;
 			productReference = 2D5C47262B637C7F00E541C0 /* SwiftUILearning.app */;
@@ -257,6 +359,7 @@
 			mainGroup = 2D5C471D2B637C7F00E541C0;
 			packageReferences = (
 				2DCC84C62BF9DCC400991C3A /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				CBCDBDBC2BFF9E2F00E26C77 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 2D5C47272B637C7F00E541C0 /* Products */;
 			projectDirPath = "";
@@ -289,20 +392,29 @@
 				2D2FB04C2B64D1510019EFED /* CustomButtonDemo.swift in Sources */,
 				2D931AEF2B68A4D600622C75 /* CustomShapes.swift in Sources */,
 				2DCC84C52BF9DC0F00991C3A /* LottieView.swift in Sources */,
+				CBCDBDB82BFF82D500E26C77 /* PagerView.swift in Sources */,
 				2DD43F262BF87D2E00218CDC /* CustomSlider.swift in Sources */,
 				2D2FB0522B6522D20019EFED /* TransitionDemo.swift in Sources */,
+				CBCDBDC52C01C9BA00E26C77 /* PagerViewDemo.swift in Sources */,
 				2DD43F282BF87E6900218CDC /* CustomSliderDemo.swift in Sources */,
+				CBCDBDC92C02482E00E26C77 /* PagerViewModel.swift in Sources */,
 				2D2FB0452B64D05D0019EFED /* ButtonConfiguration.swift in Sources */,
 				2D2FB05F2B66A8E50019EFED /* MatchedGeometryDemo.swift in Sources */,
 				2D2FB0582B6653EC0019EFED /* CustomTransitionDemo.swift in Sources */,
 				2D2998EE2BFA32020018057B /* LottieViewAnimationDemo.swift in Sources */,
 				2D2FB0502B64D5C70019EFED /* ButtonStyleDemo.swift in Sources */,
+				CBCDBDCE2C0316A300E26C77 /* LinearProgressView.swift in Sources */,
 				2D931AED2B68083F00622C75 /* CustomShapesDemo.swift in Sources */,
 				2DCC84C22BF99F7900991C3A /* FloatExtensions.swift in Sources */,
 				2D5C472A2B637C7F00E541C0 /* SwiftUILearningApp.swift in Sources */,
+				CBCDBDC02C00404800E26C77 /* CustomPageControl.swift in Sources */,
+				CBCDBDD72C03999500E26C77 /* LinearProgressViewDemo.swift in Sources */,
 				2D931AEA2B68035900622C75 /* AutomaticGrammarAgreement.swift in Sources */,
+				CBCDBDBA2BFF986200E26C77 /* Model.swift in Sources */,
 				2D2FB05C2B665A3F0019EFED /* CustomTransitions.swift in Sources */,
 				2D2998F72BFA42590018057B /* Constants.swift in Sources */,
+				CBCDBDD52C035CCB00E26C77 /* LinearProgressViewModel.swift in Sources */,
+				CBCDBDC32C01AD3900E26C77 /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +630,14 @@
 				minimumVersion = 4.4.3;
 			};
 		};
+		CBCDBDBC2BFF9E2F00E26C77 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -525,6 +645,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2DCC84C62BF9DCC400991C3A /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		CBCDBDBD2BFF9E2F00E26C77 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CBCDBDBC2BFF9E2F00E26C77 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

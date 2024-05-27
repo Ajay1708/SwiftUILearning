@@ -25,6 +25,10 @@ class LinearProgressViewModel: ObservableObject {
         timeInterval / durationInSeconds
     }()
     
+    /// - Parameters:
+    ///   - durationInSeconds: Show the progress for the given duration
+    ///   - initialProgressValue: Start the progress with the initialProgressValue. The initialProgress should be in the range of 0 ... 1
+    ///   - reverse: This boolean check allows us to reverse the progress starting from 1 - initialProgressValue
     init(
         durationInSeconds: Double,
         initialProgressValue: Double = 0.0,
@@ -34,7 +38,7 @@ class LinearProgressViewModel: ObservableObject {
         self.currentProgressValue = initialProgressValue
         self.reverse = reverse
         if reverse {
-            self.currentProgressValue = 1.0
+            self.currentProgressValue = 1.0 - initialProgressValue
         }
     }
     

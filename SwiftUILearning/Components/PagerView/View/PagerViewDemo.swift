@@ -9,29 +9,23 @@ import SwiftUI
 import Kingfisher
 
 struct PagerViewDemo: View {
-    private let stories: [Story] = jarStories
-    @State private var timer = Timer.publish(every: 4, on: .main, in: .default).autoconnect()
-    @State private var selectedPage: Int = 0
-    
-    var isLastPage: Bool {
-        selectedPage == stories.count - 1
-    }
+    @StateObject private var viewModel = PagerViewModel()
     
     var body: some View {
         PagerView(
-            selectedPage: $selectedPage,
-            pagesCount: stories.count
+            selectedPage: $viewModel.selectedPage,
+            totalNoofPages: viewModel.totalNoofPages,
+            animationDuration: viewModel.animationDuration
         ) {
-            ForEach(Array(stories.enumerated()), id: \.offset) { offset, story in
+            ForEach(Array(viewModel.stories.enumerated()), id: \.offset) { offset, story in
                 createPage(from: story)
+                    .tag(offset)
             }
         }
-        .onChange(of: selectedPage) {
-            restartTimer()
+        .ignoresSafeArea()
+        .onAppear {
+            viewModel.onAppear()
         }
-        .onReceive(timer, perform: { _ in
-            goToNextPage()
-        })
     }
     
     @ViewBuilder
@@ -48,8 +42,8 @@ struct PagerViewDemo: View {
                     
                     Spacer()
                     
-                    if !isLastPage {
-                        Button(action: goToNextPage) {
+                    if story != viewModel.lastStory {
+                        Button(action: viewModel.goToNextPage) {
                             Image(systemName: "arrow.right.circle")
                                 .font(.system(size: 40))
                                 .foregroundStyle(Color(hex: story.textColor))
@@ -65,6 +59,11 @@ struct PagerViewDemo: View {
                     .font(.system(size: 16))
                 
                 Spacer()
+                
+                // Don't use index check because selectedPage will change when the page is half way to the next screen
+                if story == viewModel.lastStory {
+                    startNowCTA
+                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .foregroundStyle(Color(hex: story.textColor))
@@ -72,19 +71,24 @@ struct PagerViewDemo: View {
         }
     }
     
-    private func goToNextPage() {
-        selectedPage = isLastPage ? selectedPage : selectedPage + 1
-    }
-    
-    private func restartTimer() {
-        withAnimation(.linear) {
-            timer.upstream.connect().cancel()
-            
-            if !isLastPage {
-                self.timer = Timer.publish(every: 4, on: .main, in: .default).autoconnect()
+    private var startNowCTA: some View {
+        Button(action: startNow) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10).fill(Color(hex: "#6038CE"))
+                
+                HStack {
+                    Text("Start Now")
+                    
+                    Image(systemName: "arrow.forward")
+                }
+                .foregroundStyle(Color.white)
             }
+            .frame(height: 50)
+            .font(.system(size: 14, weight: .bold))
         }
     }
+    
+    private func startNow() {}
 }
 
 #Preview {

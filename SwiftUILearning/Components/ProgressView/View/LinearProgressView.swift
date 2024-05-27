@@ -13,6 +13,11 @@ struct LinearProgressView: View {
     let height: CGFloat
     @StateObject private var viewModel: LinearProgressViewModel
     
+    /// - Parameters:
+    ///   - progressColor: The color of the progress
+    ///   - trackColor: The color of the track
+    ///   - height: height of the progressView
+    ///   - viewModel: viewmodel to handle the logic of ProgressView
     init(
         progressColor: Color,
         trackColor: Color,
