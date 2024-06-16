@@ -8,25 +8,18 @@
 import Combine
 import SwiftUI
 
-class PagerDemoViewModel: ObservableObject {
-    @Published var selectedPage: Int = 0
+class PagerViewModel: ObservableObject {
+    @Published var selectedPage: Int
     
-    let stories: [Story] = jarStories
-    let animationDuration: CGFloat = 4
+    var totalNoofPages: Int
+    let animationDuration: CGFloat
     private var timer: Timer?
     private var cancellable: AnyCancellable?
     
-    var totalNoofPages: Int {
-        stories.count
-    }
-    var lastStory: Story? {
-        stories.last
-    }
-    private var isLastPage: Bool {
-        selectedPage == totalNoofPages - 1
-    }
-    
-    init() {
+    init(totalNoofPages: Int = 0, selectedPage: Int = 0, animationDuration: CGFloat) {
+        self.totalNoofPages = totalNoofPages
+        self.selectedPage = selectedPage
+        self.animationDuration = animationDuration
         subscribeToPublisher()
     }
     
@@ -34,6 +27,16 @@ class PagerDemoViewModel: ObservableObject {
         // Cancel the subscription when the instance is deallocated
         cancellable?.cancel()
         cancelTimer()
+    }
+    
+    func update(totalNoofPages: Int) {
+        self.totalNoofPages = totalNoofPages
+        self.selectedPage = 0
+        startTimer()
+    }
+    
+    private var isLastPage: Bool {
+        selectedPage == totalNoofPages - 1
     }
     
     private func subscribeToPublisher() {
@@ -45,20 +48,15 @@ class PagerDemoViewModel: ObservableObject {
             }
     }
     
-    /// If pages are not more than 1 then there is no need of PageControl and no need to instantiate Timer
-    func onAppear() {
-        if totalNoofPages > 1 {
-            startTimer()
-        }
-    }
-    
     /// Change the page at regular intervals which are published by Timer
     func goToNextPage() {
         selectedPage = isLastPage ? selectedPage : selectedPage + 1
     }
     
     /// Initiating Timer which publishes an event approximately for every `animationDuration`.
-    private func startTimer() {
+    ///  - Note: Timer won't be initialised `if totalNoofPages <= 1`
+    func startTimer() {
+        guard totalNoofPages > 1 else { return }
         timer = Timer.scheduledTimer(withTimeInterval: animationDuration, repeats: false, block: { [weak self] timer in
             guard let self else {return}
             DispatchQueue.main.async {

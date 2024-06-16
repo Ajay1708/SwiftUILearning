@@ -9,23 +9,34 @@ import SwiftUI
 import Kingfisher
 
 struct PagerViewDemo: View {
-    @StateObject private var viewModel = PagerViewModel()
+    @StateObject private var viewModel = PagerDemoViewModel()
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        PagerView(
-            selectedPage: $viewModel.selectedPage,
-            totalNoofPages: viewModel.totalNoofPages,
-            animationDuration: viewModel.animationDuration
-        ) {
-            ForEach(Array(viewModel.stories.enumerated()), id: \.offset) { offset, story in
-                createPage(from: story)
-                    .tag(offset)
+        ZStack {
+            Color(hex: "#272239").ignoresSafeArea(.all)
+            
+            PagerView(
+                selectedPage: $viewModel.pagerViewModel.selectedPage,
+                totalNoofPages: viewModel.pagerViewModel.totalNoofPages,
+                animationDuration: viewModel.pagerViewModel.animationDuration
+            ) {
+                ForEach(Array(viewModel.stories.enumerated()), id: \.offset) { offset, story in
+                    createPage(from: story)
+                        .tag(offset)
+                }
+            }
+            .ignoresSafeArea()
+            
+            if viewModel.showShimmerAnimation {
+                shimmeringView
             }
         }
-        .ignoresSafeArea()
+        .toolbar(.hidden, for: .automatic)
         .onAppear {
-            viewModel.onAppear()
+            viewModel.fetchStories()
         }
+        
     }
     
     @ViewBuilder
@@ -43,7 +54,7 @@ struct PagerViewDemo: View {
                     Spacer()
                     
                     if story != viewModel.lastStory {
-                        Button(action: viewModel.goToNextPage) {
+                        Button(action: viewModel.pagerViewModel.goToNextPage) {
                             Image(systemName: "arrow.right.circle")
                                 .font(.system(size: 40))
                                 .foregroundStyle(Color(hex: story.textColor))
@@ -62,7 +73,7 @@ struct PagerViewDemo: View {
                 
                 // Don't use index check because selectedPage will change when the page is half way to the next screen
                 if story == viewModel.lastStory {
-                    startNowCTA
+                    goToHomeCTA
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -71,15 +82,15 @@ struct PagerViewDemo: View {
         }
     }
     
-    private var startNowCTA: some View {
-        Button(action: startNow) {
+    private var goToHomeCTA: some View {
+        Button(action: backAction) {
             ZStack {
                 RoundedRectangle(cornerRadius: 10).fill(Color(hex: "#6038CE"))
                 
                 HStack {
-                    Text("Start Now")
+                    Text("Go to home")
                     
-                    Image(systemName: "arrow.forward")
+                    Image(systemName: "house")
                 }
                 .foregroundStyle(Color.white)
             }
@@ -88,7 +99,24 @@ struct PagerViewDemo: View {
         }
     }
     
-    private func startNow() {}
+    private var shimmeringView: some View {
+        GeometryReader { reader in
+            VStack(spacing: 20) {
+                ForEach(1 ... 3, id: \.self) { _ in
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color(hex: "#7463A1"))
+                        .frame(height: reader.size.height / 3.8)
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.horizontal, 16)
+            .redacted(reason: .placeholder)
+            .shimmering()
+        }
+    }
+    private func backAction() {
+        dismiss()
+    }
 }
 
 #Preview {

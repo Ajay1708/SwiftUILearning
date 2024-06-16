@@ -20,4 +20,8 @@ extension Float {
         let fractionalpart = String(self).split(separator: ".")[1]
         return fractionalpart == "0" ? 0 : fractionalpart.count
     }
+    
+    var progressPercentage: String {
+        self.formatted(.percent.precision(.fractionLength(0)))
+    }
 }

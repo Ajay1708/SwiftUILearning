@@ -183,9 +183,3 @@ struct CustomSlider_Previews: PreviewProvider {
         .padding(.horizontal, 16)
     }
 }
-
-extension String {
-    func toFloat() -> Float {
-        Float(self) ?? 0
-    }
-}

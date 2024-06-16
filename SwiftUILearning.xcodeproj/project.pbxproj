@@ -29,6 +29,10 @@
 		2DCC84C82BF9DCC400991C3A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2DCC84C72BF9DCC400991C3A /* Lottie */; };
 		2DD43F262BF87D2E00218CDC /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD43F252BF87D2E00218CDC /* CustomSlider.swift */; };
 		2DD43F282BF87E6900218CDC /* CustomSliderDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD43F272BF87E6900218CDC /* CustomSliderDemo.swift */; };
+		CB2FD6CE2C0B20E200105E40 /* LinearProgressViewDemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FD6CD2C0B20E200105E40 /* LinearProgressViewDemoViewModel.swift */; };
+		CB2FD6D02C0B27EF00105E40 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FD6CF2C0B27EF00105E40 /* DoubleExtensions.swift */; };
+		CB2FD6D22C0C897900105E40 /* PagerViewDemo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FD6D12C0C897900105E40 /* PagerViewDemo2.swift */; };
+		CB2FD6D42C0C8B4500105E40 /* PagerDemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FD6D32C0C8B4500105E40 /* PagerDemoViewModel.swift */; };
 		CBCDBDB82BFF82D500E26C77 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDB72BFF82D500E26C77 /* PagerView.swift */; };
 		CBCDBDBA2BFF986200E26C77 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDB92BFF986200E26C77 /* Model.swift */; };
 		CBCDBDBE2BFF9E2F00E26C77 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CBCDBDBD2BFF9E2F00E26C77 /* Kingfisher */; };
@@ -39,6 +43,8 @@
 		CBCDBDCE2C0316A300E26C77 /* LinearProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDCD2C0316A300E26C77 /* LinearProgressView.swift */; };
 		CBCDBDD52C035CCB00E26C77 /* LinearProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDD42C035CCB00E26C77 /* LinearProgressViewModel.swift */; };
 		CBCDBDD72C03999500E26C77 /* LinearProgressViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDD62C03999500E26C77 /* LinearProgressViewDemo.swift */; };
+		CBCDBDE02C0574AE00E26C77 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDDF2C0574AE00E26C77 /* Shimmer.swift */; };
+		CBCDBDE22C0577D500E26C77 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDE12C0577D500E26C77 /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +70,10 @@
 		2DCC84C42BF9DC0E00991C3A /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		2DD43F252BF87D2E00218CDC /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		2DD43F272BF87E6900218CDC /* CustomSliderDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSliderDemo.swift; sourceTree = "<group>"; };
+		CB2FD6CD2C0B20E200105E40 /* LinearProgressViewDemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressViewDemoViewModel.swift; sourceTree = "<group>"; };
+		CB2FD6CF2C0B27EF00105E40 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
+		CB2FD6D12C0C897900105E40 /* PagerViewDemo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewDemo2.swift; sourceTree = "<group>"; };
+		CB2FD6D32C0C8B4500105E40 /* PagerDemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerDemoViewModel.swift; sourceTree = "<group>"; };
 		CBCDBDB72BFF82D500E26C77 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
 		CBCDBDB92BFF986200E26C77 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CBCDBDBF2C00404800E26C77 /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
@@ -73,6 +83,8 @@
 		CBCDBDCD2C0316A300E26C77 /* LinearProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressView.swift; sourceTree = "<group>"; };
 		CBCDBDD42C035CCB00E26C77 /* LinearProgressViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearProgressViewModel.swift; sourceTree = "<group>"; };
 		CBCDBDD62C03999500E26C77 /* LinearProgressViewDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressViewDemo.swift; sourceTree = "<group>"; };
+		CBCDBDDF2C0574AE00E26C77 /* Shimmer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
+		CBCDBDE12C0577D500E26C77 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +143,7 @@
 		2D2FB0552B652CC30019EFED /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				CBCDBDDF2C0574AE00E26C77 /* Shimmer.swift */,
 				2D2FB05D2B66A89E0019EFED /* MatchedGeometry */,
 				2D2FB0562B652CCE0019EFED /* Transitions */,
 			);
@@ -218,6 +231,8 @@
 			children = (
 				2DCC84C12BF99F7900991C3A /* FloatExtensions.swift */,
 				CBCDBDC22C01AD3900E26C77 /* ColorExtensions.swift */,
+				CBCDBDE12C0577D500E26C77 /* StringExtensions.swift */,
+				CB2FD6CF2C0B27EF00105E40 /* DoubleExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -271,6 +286,7 @@
 			children = (
 				CBCDBDB72BFF82D500E26C77 /* PagerView.swift */,
 				CBCDBDC42C01C9BA00E26C77 /* PagerViewDemo.swift */,
+				CB2FD6D12C0C897900105E40 /* PagerViewDemo2.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				CBCDBDC82C02482E00E26C77 /* PagerViewModel.swift */,
+				CB2FD6D32C0C8B4500105E40 /* PagerDemoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -305,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				CBCDBDD42C035CCB00E26C77 /* LinearProgressViewModel.swift */,
+				CB2FD6CD2C0B20E200105E40 /* LinearProgressViewDemoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -397,21 +415,27 @@
 				2D2FB0522B6522D20019EFED /* TransitionDemo.swift in Sources */,
 				CBCDBDC52C01C9BA00E26C77 /* PagerViewDemo.swift in Sources */,
 				2DD43F282BF87E6900218CDC /* CustomSliderDemo.swift in Sources */,
+				CB2FD6CE2C0B20E200105E40 /* LinearProgressViewDemoViewModel.swift in Sources */,
 				CBCDBDC92C02482E00E26C77 /* PagerViewModel.swift in Sources */,
 				2D2FB0452B64D05D0019EFED /* ButtonConfiguration.swift in Sources */,
 				2D2FB05F2B66A8E50019EFED /* MatchedGeometryDemo.swift in Sources */,
 				2D2FB0582B6653EC0019EFED /* CustomTransitionDemo.swift in Sources */,
+				CB2FD6D22C0C897900105E40 /* PagerViewDemo2.swift in Sources */,
 				2D2998EE2BFA32020018057B /* LottieViewAnimationDemo.swift in Sources */,
 				2D2FB0502B64D5C70019EFED /* ButtonStyleDemo.swift in Sources */,
 				CBCDBDCE2C0316A300E26C77 /* LinearProgressView.swift in Sources */,
 				2D931AED2B68083F00622C75 /* CustomShapesDemo.swift in Sources */,
 				2DCC84C22BF99F7900991C3A /* FloatExtensions.swift in Sources */,
+				CB2FD6D42C0C8B4500105E40 /* PagerDemoViewModel.swift in Sources */,
 				2D5C472A2B637C7F00E541C0 /* SwiftUILearningApp.swift in Sources */,
 				CBCDBDC02C00404800E26C77 /* CustomPageControl.swift in Sources */,
 				CBCDBDD72C03999500E26C77 /* LinearProgressViewDemo.swift in Sources */,
 				2D931AEA2B68035900622C75 /* AutomaticGrammarAgreement.swift in Sources */,
+				CB2FD6D02C0B27EF00105E40 /* DoubleExtensions.swift in Sources */,
 				CBCDBDBA2BFF986200E26C77 /* Model.swift in Sources */,
+				CBCDBDE02C0574AE00E26C77 /* Shimmer.swift in Sources */,
 				2D2FB05C2B665A3F0019EFED /* CustomTransitions.swift in Sources */,
+				CBCDBDE22C0577D500E26C77 /* StringExtensions.swift in Sources */,
 				2D2998F72BFA42590018057B /* Constants.swift in Sources */,
 				CBCDBDD52C035CCB00E26C77 /* LinearProgressViewModel.swift in Sources */,
 				CBCDBDC32C01AD3900E26C77 /* ColorExtensions.swift in Sources */,
@@ -554,8 +578,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -583,8 +607,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+extension String {
+    func toFloat() -> Float {
+        Float(self) ?? 0
+    }
+}

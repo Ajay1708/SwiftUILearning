@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+
 /// Ref: https://sarunw.com/posts/swiftui-progressview/
 struct LinearProgressView: View {
-    let progressColor: Color
-    let trackColor: Color
-    let height: CGFloat
+    private let progressColor: Color
+    private let trackColor: Color
+    private let height: CGFloat
+    private let cornerRadius: CGFloat
+    private let progressEnded: () -> Void
     @StateObject private var viewModel: LinearProgressViewModel
     
     /// - Parameters:
@@ -22,33 +25,42 @@ struct LinearProgressView: View {
         progressColor: Color,
         trackColor: Color,
         height: CGFloat,
-        viewModel: LinearProgressViewModel
+        cornerRadius: CGFloat,
+        viewModel: LinearProgressViewModel,
+        progressEnded: @escaping () -> Void = {}
     ) {
         self.progressColor = progressColor
         self.trackColor = trackColor
         self.height = height
+        self.cornerRadius = cornerRadius
         self._viewModel = StateObject(wrappedValue: viewModel)
+        self.progressEnded = progressEnded
     }
     
     
     var body: some View {
         ProgressView(value: viewModel.currentProgressValue)
             .progressViewStyle(CustomProgressViewStyle(
-                height: height,
+                progressColor: progressColor,
                 trackColor: trackColor,
-                progressColor: progressColor
+                height: height,
+                cornerRadius: cornerRadius
             ))
             .progressViewStyle(.linear)
-            .onAppear {
-                viewModel.initiateTimer()
-            }
+            .animation(.linear, value: viewModel.currentProgressValue)
+            .onReceive(viewModel.$progressEnded, perform: { isEnded in
+                if isEnded {
+                    self.progressEnded()
+                }
+            })
     }
 }
 
 struct CustomProgressViewStyle: ProgressViewStyle {
-    let height: CGFloat
-    var trackColor: Color
     var progressColor: Color
+    var trackColor: Color
+    let height: CGFloat
+    let cornerRadius: CGFloat
     
     func makeBody(configuration: Configuration) -> some View {
         let fractionCompleted = CGFloat(configuration.fractionCompleted ?? 0)
@@ -57,10 +69,10 @@ struct CustomProgressViewStyle: ProgressViewStyle {
             let progressWidth = fractionCompleted * geometry.size.width
             
             ZStack(alignment: .leading) {
-                RoundedRectangle(cornerRadius: height/2)
+                RoundedRectangle(cornerRadius: cornerRadius)
                     .fill(trackColor)
                 
-                RoundedRectangle(cornerRadius: height/2)
+                RoundedRectangle(cornerRadius: cornerRadius)
                     .fill(progressColor)
                     .frame(width: progressWidth)
             }
@@ -72,10 +84,12 @@ struct CustomProgressViewStyle: ProgressViewStyle {
 
 #Preview {
     let viewModel = LinearProgressViewModel(durationInSeconds: 10)
+    let height: CGFloat = 15
     return LinearProgressView(
         progressColor: Color.purple,
         trackColor: Color.gray.opacity(0.5),
-        height: 15,
+        height: height,
+        cornerRadius: height/2,
         viewModel: viewModel
     )
 }

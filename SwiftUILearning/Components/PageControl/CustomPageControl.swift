@@ -19,16 +19,6 @@ struct CustomPageControl: View {
     private let outsidePadding: CGFloat = 5
     private let initialProgressValue = 0.25
     
-    // RectangleWidth is equal to four times of circleDiameter
-    var rectangleWidth: CGFloat {
-        circleDiameter * 4
-    }
-    
-    // The progress starts from 1/4 th of rectangle hence we are addition it to the total progress.
-    var durationForLinearProgressView: CGFloat {
-        (1 + initialProgressValue) * animationDuration
-    }
-
     /// - Parameters:
     ///   - totalNoofPages: Represents total no of pages in a Tabview
     ///   - selectedPage: Selected page from a list of pages in a Tabview
@@ -58,20 +48,39 @@ struct CustomPageControl: View {
         self.backgroundColor = backgroundColor
     }
     
+    // RectangleWidth is equal to four times of circleDiameter
+    var rectangleWidth: CGFloat {
+        circleDiameter * 4
+    }
+    
+    // The progress starts from 1/4 th of rectangle hence we are addition it to the total progress.
+    var durationForLinearProgressView: CGFloat {
+        (1 + initialProgressValue) * animationDuration
+    }
+    
     var body: some View {
         HStack(spacing: spacing) {
             ForEach(0 ..< totalNoofPages, id: \.self) { currentPage in
                 if selectedPage == currentPage {
+                    let viewModel = LinearProgressViewModel(
+                        durationInSeconds: durationForLinearProgressView,
+                        initialProgressValue: initialProgressValue
+                    )
                     LinearProgressView(
                         progressColor: activePageColor,
                         trackColor: inactivePageColor,
                         height: circleDiameter,
-                        viewModel: LinearProgressViewModel(
-                            durationInSeconds: durationForLinearProgressView,
-                            initialProgressValue: initialProgressValue
-                        )
+                        cornerRadius: circleDiameter / 2,
+                        viewModel: viewModel
                     )
                     .frame(width: rectangleWidth, height: circleDiameter)
+                    .onAppear {
+                        viewModel.startTimer()
+                    }
+                    .onDisappear {
+                        // When user slider to new page or exists the pager view i don't want to continue the timer
+                        viewModel.invalidateTimer()
+                    }
                 } else {
                     Circle()
                         .fill(inactivePageColor)
@@ -84,6 +93,7 @@ struct CustomPageControl: View {
             RoundedRectangle(cornerRadius: circleDiameter + outsidePadding)
                 .fill(backgroundColor)
         }
+        .animation(.snappy, value: selectedPage)
     }
 }
 
@@ -95,7 +105,7 @@ struct CustomPageControl: View {
         Color(backgroundColor).ignoresSafeArea(.all)
         
         CustomPageControl(
-            totalNoofPages: 4, 
+            totalNoofPages: 4,
             selectedPage: 0,
             animationDuration: 4,
             backgroundColor: pageControlBgColor

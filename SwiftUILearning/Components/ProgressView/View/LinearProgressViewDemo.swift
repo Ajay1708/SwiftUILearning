@@ -11,48 +11,130 @@ struct LinearProgressViewDemo: View {
     private let progressColor: Color
     private let trackColor: Color
     private let height: CGFloat
-    @StateObject private var viewModel: LinearProgressViewModel
-    
+    private let cornerRadius: CGFloat
+    @StateObject var viewModel = LinearProgressDemoViewModel(linearProgressViewModel: LinearProgressViewModel(durationInSeconds: 30, reverse: true))
     init(
         progressColor: Color,
         trackColor: Color,
         height: CGFloat,
-        viewModel: LinearProgressViewModel
+        cornerRadius: CGFloat
     ) {
         self.progressColor = progressColor
         self.trackColor = trackColor
         self.height = height
-        self._viewModel = StateObject(wrappedValue: viewModel)
-    }
-    
-    var progressPercentage: String {
-        viewModel.currentProgressValue.formatted(.percent.precision(.fractionLength(0)))
+        self.cornerRadius = cornerRadius
     }
     
     var body: some View {
-        ZStack {
-            Color.white.ignoresSafeArea(.all)
-            VStack(alignment: .leading) {
-                LinearProgressView(
-                    progressColor: progressColor,
-                    trackColor: trackColor,
-                    height: height,
-                    viewModel: viewModel
-                )
+        NavigationView {
+            ZStack {
+                Color(hex:"#272239").ignoresSafeArea(.all)
                 
-                Text(progressPercentage)
-                    .foregroundStyle(Color.gray)
+                VStack {
+                    Spacer()
+                    
+                    LinearProgressView(
+                        progressColor: progressColor,
+                        trackColor: trackColor,
+                        height: height,
+                        cornerRadius: cornerRadius,
+                        viewModel: viewModel.linearProgressViewModel,
+                        progressEnded: {
+                            viewModel.requestGoldPriceValidity()
+                        }
+                    )
+                    .overlay {
+                        contentView
+                    }
+                    .opacity(viewModel.linearProgressViewModel.showShimmer ? 0 : 1)
+                    .overlay {
+                        if viewModel.linearProgressViewModel.showShimmer {
+                            shimmerView
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                    goToPagerViewCTA
+                }
             }
-            .padding()
+            .onAppear {
+                viewModel.startTimer()
+            }
+            .onDisappear {
+                viewModel.stopTimer()
+            }
+        }
+    }
+    
+    private var contentView: some View {
+        HStack {
+            ZStack {
+                Capsule()
+                    .fill(trackColor)
+                    .frame(width: 50, height: 20)
+                
+                HStack {
+                    Circle()
+                        .fill(Color.pink)
+                        .frame(width: 8, height: 8)
+                    
+                    Text("LIVE")
+                        .foregroundStyle(Color.pink)
+                }
+                .font(.system(size: 10))
+            }
+            
+            Group {
+                Text("Buy Price: ₹7,495.71/gm")
+                
+                Spacer()
+                
+                Text("Valid For: \(viewModel.linearProgressViewModel.progressCompletionTime)")
+            }
+            .font(.system(size: 12))
+            .foregroundStyle(Color.white)
+        }
+        .padding(.horizontal, 16)
+    }
+    
+    private var shimmerView: some View {
+        ZStack {
+            Rectangle()
+                .fill(Color.white.opacity(0.5))
+                .frame(height: height)
+                .redacted(reason: .placeholder)
+                .shimmering()
+            
+            Text("Fetching New Gold Price")
+                .foregroundStyle(Color.white)
+                .font(.system(size: 12))
+        }
+    }
+    
+    private var goToPagerViewCTA: some View {
+        NavigationLink(destination: PagerViewDemo()) {
+            Text("Go to PagerView")
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(8)
         }
     }
 }
 
-#Preview {
-    LinearProgressViewDemo(
-        progressColor: Color.blue,
-        trackColor: Color.gray.opacity(0.5),
-        height: 10,
-        viewModel: LinearProgressViewModel(durationInSeconds: 10)
-    )
+// MARK: PREVIEWS
+struct LinearProgressViewDemo_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Color.white.ignoresSafeArea(.all)
+            
+            LinearProgressViewDemo(
+                progressColor: Color(hex: "#EF8A8A"),
+                trackColor: Color(hex: "#3C3357"),
+                height: 35,
+                cornerRadius: 0
+            )
+        }
+    }
 }

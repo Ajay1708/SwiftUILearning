@@ -11,12 +11,14 @@ import SwiftUI
 struct SwiftUILearningApp: App {
     var body: some Scene {
         WindowGroup {
-            LinearProgressViewDemo(
-                progressColor: Color.purple,
-                trackColor: Color.gray.opacity(0.5),
-                height: 10,
-                viewModel: LinearProgressViewModel(durationInSeconds: 10, initialProgressValue: 0.25, reverse: true)
-            )
+//            LinearProgressViewDemo(
+//                progressColor: Color(hex: "#EF8A8A"),
+//                trackColor: Color(hex: "#3C3357"),
+//                height: 35,
+//                cornerRadius: 0
+//            )
+            
+            PagerViewDemo()
         }
     }
 }

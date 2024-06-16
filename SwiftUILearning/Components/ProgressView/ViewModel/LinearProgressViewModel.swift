@@ -7,13 +7,18 @@
 
 import SwiftUI
 
+@MainActor
 class LinearProgressViewModel: ObservableObject {
     @Published var currentProgressValue: Double = 0.0
+    @Published var progressEnded: Bool = false
+    @Published var progressCompletionTime: String = "00:00"
+    @Published var showShimmer: Bool = false
     
     private var timer: Timer?
-    private let durationInSeconds: Double
+    private var durationInSeconds: Double
+    private let initialProgressValue: Double
     private let reverse: Bool
-    private let timeInterval: Double = 0.01 // Update every 0.01 seconds
+    private let timeInterval: Double = 0.01 // Update every 1/100 of a second
     
     /*
      The updationValue determines how much the progress should increase or decrease at each interval. This ensures that the progress value reaches 1.0(for forward) or 0.0(for reverse) at the end of the specified duration.
@@ -21,9 +26,7 @@ class LinearProgressViewModel: ObservableObject {
      This means the progress will either increase or decrease by 0.002 every 0.01 second.
      Over 5 seconds, the progress will increase by 0.002 * (5 / 0.01) = 1.0, reaching 100%. --> Forward progress
      */
-    lazy var updationValue: CGFloat = {
-        timeInterval / durationInSeconds
-    }()
+    var updationValue: CGFloat = 0
     
     /// - Parameters:
     ///   - durationInSeconds: Show the progress for the given duration
@@ -35,26 +38,35 @@ class LinearProgressViewModel: ObservableObject {
         reverse: Bool = false
     ) {
         self.durationInSeconds = durationInSeconds
-        self.currentProgressValue = initialProgressValue
+        self.initialProgressValue = initialProgressValue
         self.reverse = reverse
-        if reverse {
-            self.currentProgressValue = 1.0 - initialProgressValue
-        }
+        setupProgressValue()
     }
     
     deinit {
-        timer?.invalidate()
+        print("\(Self.self) is de-initialised")
     }
     
-    func initiateTimer() {
+    /// Updates the duration to run ProgressView
+    func updateDuration(_ durationInSeconds: Double) {
+        self.durationInSeconds = durationInSeconds
+        startTimer(with: .seconds(2))
+    }
+    
+    /// Before initiating Timer we should invalidate the existing Timer if exists
+    func scheduleTimer() {
+        guard timer == nil else {
+            invalidateTimer()
+            return
+        }
+        
+        showShimmer = false
+        updationValue = timeInterval / durationInSeconds
+        
         timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { [weak self] timer in
             guard let self else {return}
             DispatchQueue.main.async {
-                if self.reverse {
-                    self.decrementProgess()
-                } else {
-                    self.incrementProgress()
-                }
+                self.handleProgress()
             }
         })
         
@@ -62,23 +74,67 @@ class LinearProgressViewModel: ObservableObject {
         RunLoop.main.add(timer, forMode: .common)
     }
     
-    func incrementProgress() {
-        if self.currentProgressValue < 1.0 {
-            // Ensure the progress does not exceed 1.0
-            self.currentProgressValue = min(self.currentProgressValue + updationValue, 1.0)
+    /// This method either `Increment or Decrement the progressView` and `updates the progressCompletionTime` for `every 0.01 second`
+    private func handleProgress() {
+        if reverse {
+            decrementProgess()
         } else {
-            // Invalidate the timer when progress reaches 1.0
-            timer?.invalidate()
+            incrementProgress()
+        }
+        let totalSeconds = currentProgressValue * durationInSeconds
+        self.progressCompletionTime = totalSeconds.formatTime()
+    }
+    
+    /// This method schedules the `Timer` after some `delay` provided by the user
+    func startTimer(with delay: DispatchTimeInterval) {
+        setupProgressValue()
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
+            guard let self else {return}
+            self.scheduleTimer()
         }
     }
     
-    func decrementProgess() {
-        if self.currentProgressValue > 0.0 {
+    /// This method schedules the `Timer` immediately
+    func startTimer() {
+        setupProgressValue()
+        scheduleTimer()
+    }
+    
+    func invalidateTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    func setupProgressValue() {
+        if reverse {
+            currentProgressValue = 1.0 - initialProgressValue
+        } else {
+            currentProgressValue = initialProgressValue
+        }
+        progressEnded = false
+        progressCompletionTime = "00:00"
+        showShimmer = true
+    }
+    
+    private func incrementProgress() {
+        if currentProgressValue < 1.0 {
+            // Ensure the progress does not exceed 1.0
+            currentProgressValue = min(currentProgressValue + updationValue, 1.0)
+        } else {
+            // Invalidate the timer when progress reaches 1.0
+            invalidateTimer()
+            progressEnded = true
+        }
+    }
+    
+    private func decrementProgess() {
+        if currentProgressValue > 0.0 {
             // Ensure the progress does not subceed 0.0
-            self.currentProgressValue = max(self.currentProgressValue - updationValue, 0.0)
+            currentProgressValue = max(currentProgressValue - updationValue, 0.0)
         } else {
             // Invalidate the timer when progress reaches 0.0
-            timer?.invalidate()
+            invalidateTimer()
+            progressEnded = true
         }
     }
 }
