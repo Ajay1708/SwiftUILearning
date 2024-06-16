@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-class PagerViewModel: ObservableObject {
+class PagerDemoViewModel: ObservableObject {
     @Published var selectedPage: Int = 0
     
     let stories: [Story] = jarStories
