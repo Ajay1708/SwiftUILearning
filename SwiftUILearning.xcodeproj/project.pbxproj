@@ -70,6 +70,7 @@
 		2DCC84C42BF9DC0E00991C3A /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		2DD43F252BF87D2E00218CDC /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		2DD43F272BF87E6900218CDC /* CustomSliderDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSliderDemo.swift; sourceTree = "<group>"; };
+		CB05CF042C1EC48300EC2F42 /* State.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = State.md; sourceTree = "<group>"; };
 		CB2FD6CD2C0B20E200105E40 /* LinearProgressViewDemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressViewDemoViewModel.swift; sourceTree = "<group>"; };
 		CB2FD6CF2C0B27EF00105E40 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		CB2FD6D12C0C897900105E40 /* PagerViewDemo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewDemo2.swift; sourceTree = "<group>"; };
@@ -189,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				2D2998F62BFA42590018057B /* Constants.swift */,
+				CB05CF032C1EC45000EC2F42 /* Documentation */,
 				2DCC84C02BF99F6C00991C3A /* Extensions */,
 				2D931AEB2B68080600622C75 /* Shapes */,
 				2D931AE82B68033200622C75 /* SwiftHacks */,
@@ -244,6 +246,14 @@
 				2DD43F272BF87E6900218CDC /* CustomSliderDemo.swift */,
 			);
 			path = Slider;
+			sourceTree = "<group>";
+		};
+		CB05CF032C1EC45000EC2F42 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				CB05CF042C1EC48300EC2F42 /* State.md */,
+			);
+			path = Documentation;
 			sourceTree = "<group>";
 		};
 		CBCDBDB62BFF82A100E26C77 /* Lottie */ = {
