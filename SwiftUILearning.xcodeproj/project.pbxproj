@@ -45,6 +45,8 @@
 		CBCDBDD72C03999500E26C77 /* LinearProgressViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDD62C03999500E26C77 /* LinearProgressViewDemo.swift */; };
 		CBCDBDE02C0574AE00E26C77 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDDF2C0574AE00E26C77 /* Shimmer.swift */; };
 		CBCDBDE22C0577D500E26C77 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDE12C0577D500E26C77 /* StringExtensions.swift */; };
+		CBFD34772C79E7DA00DFAD48 /* Binding.md in Resources */ = {isa = PBXBuildFile; fileRef = CBFD34762C79E7DA00DFAD48 /* Binding.md */; };
+		CBFD34782C79E7EE00DFAD48 /* State.md in Resources */ = {isa = PBXBuildFile; fileRef = CB05CF042C1EC48300EC2F42 /* State.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,7 @@
 		CBCDBDD62C03999500E26C77 /* LinearProgressViewDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressViewDemo.swift; sourceTree = "<group>"; };
 		CBCDBDDF2C0574AE00E26C77 /* Shimmer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		CBCDBDE12C0577D500E26C77 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		CBFD34762C79E7DA00DFAD48 /* Binding.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Binding.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				CB05CF042C1EC48300EC2F42 /* State.md */,
+				CBFD34762C79E7DA00DFAD48 /* Binding.md */,
 			);
 			path = Documentation;
 			sourceTree = "<group>";
@@ -403,10 +407,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBFD34782C79E7EE00DFAD48 /* State.md in Resources */,
 				2D5C47312B637C8100E541C0 /* Preview Assets.xcassets in Resources */,
 				2D2998F52BFA406C0018057B /* confetti.json in Resources */,
 				2D5C472E2B637C8100E541C0 /* Assets.xcassets in Resources */,
 				2D2998F22BFA3A440018057B /* lockerOnboarding.lottie in Resources */,
+				CBFD34772C79E7DA00DFAD48 /* Binding.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
