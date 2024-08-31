@@ -89,6 +89,7 @@
 		CBCDBDDF2C0574AE00E26C77 /* Shimmer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		CBCDBDE12C0577D500E26C77 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		CBFD34762C79E7DA00DFAD48 /* Binding.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Binding.md; sourceTree = "<group>"; };
+		CBFD347A2C7B2D5B00DFAD48 /* StateObject.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = StateObject.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +257,7 @@
 			children = (
 				CB05CF042C1EC48300EC2F42 /* State.md */,
 				CBFD34762C79E7DA00DFAD48 /* Binding.md */,
+				CBFD347A2C7B2D5B00DFAD48 /* StateObject.md */,
 			);
 			path = Documentation;
 			sourceTree = "<group>";
