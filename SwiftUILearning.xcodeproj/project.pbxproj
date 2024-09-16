@@ -45,6 +45,9 @@
 		CBCDBDD72C03999500E26C77 /* LinearProgressViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDD62C03999500E26C77 /* LinearProgressViewDemo.swift */; };
 		CBCDBDE02C0574AE00E26C77 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDDF2C0574AE00E26C77 /* Shimmer.swift */; };
 		CBCDBDE22C0577D500E26C77 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDE12C0577D500E26C77 /* StringExtensions.swift */; };
+		CBEA59B92C97F06E00975096 /* DoTryCatchThrowsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59B52C97F06E00975096 /* DoTryCatchThrowsBootcamp.swift */; };
+		CBEA59BA2C97F06E00975096 /* DoTryCatchThrowsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59B62C97F06E00975096 /* DoTryCatchThrowsManager.swift */; };
+		CBEA59BB2C97F06E00975096 /* DoTryCatchThrowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59B72C97F06E00975096 /* DoTryCatchThrowsViewModel.swift */; };
 		CBFD34772C79E7DA00DFAD48 /* Binding.md in Resources */ = {isa = PBXBuildFile; fileRef = CBFD34762C79E7DA00DFAD48 /* Binding.md */; };
 		CBFD34782C79E7EE00DFAD48 /* State.md in Resources */ = {isa = PBXBuildFile; fileRef = CB05CF042C1EC48300EC2F42 /* State.md */; };
 /* End PBXBuildFile section */
@@ -88,6 +91,9 @@
 		CBCDBDD62C03999500E26C77 /* LinearProgressViewDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressViewDemo.swift; sourceTree = "<group>"; };
 		CBCDBDDF2C0574AE00E26C77 /* Shimmer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		CBCDBDE12C0577D500E26C77 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		CBEA59B52C97F06E00975096 /* DoTryCatchThrowsBootcamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoTryCatchThrowsBootcamp.swift; sourceTree = "<group>"; };
+		CBEA59B62C97F06E00975096 /* DoTryCatchThrowsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoTryCatchThrowsManager.swift; sourceTree = "<group>"; };
+		CBEA59B72C97F06E00975096 /* DoTryCatchThrowsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoTryCatchThrowsViewModel.swift; sourceTree = "<group>"; };
 		CBFD34762C79E7DA00DFAD48 /* Binding.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Binding.md; sourceTree = "<group>"; };
 		CBFD347A2C7B2D5B00DFAD48 /* StateObject.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = StateObject.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +182,7 @@
 		2D5C471D2B637C7F00E541C0 = {
 			isa = PBXGroup;
 			children = (
+				CBEA59832C97EF1100975096 /* SwiftConcurrency */,
 				2D2998F32BFA3A930018057B /* LottieResource */,
 				2D5C47282B637C7F00E541C0 /* SwiftUILearning */,
 				2D5C47272B637C7F00E541C0 /* Products */,
@@ -343,6 +350,24 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CBEA59832C97EF1100975096 /* SwiftConcurrency */ = {
+			isa = PBXGroup;
+			children = (
+				CBEA59B82C97F06E00975096 /* DoTryCatchThrows */,
+			);
+			path = SwiftConcurrency;
+			sourceTree = "<group>";
+		};
+		CBEA59B82C97F06E00975096 /* DoTryCatchThrows */ = {
+			isa = PBXGroup;
+			children = (
+				CBEA59B52C97F06E00975096 /* DoTryCatchThrowsBootcamp.swift */,
+				CBEA59B62C97F06E00975096 /* DoTryCatchThrowsManager.swift */,
+				CBEA59B72C97F06E00975096 /* DoTryCatchThrowsViewModel.swift */,
+			);
+			path = DoTryCatchThrows;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -430,6 +455,7 @@
 				2DCC84C52BF9DC0F00991C3A /* LottieView.swift in Sources */,
 				CBCDBDB82BFF82D500E26C77 /* PagerView.swift in Sources */,
 				2DD43F262BF87D2E00218CDC /* CustomSlider.swift in Sources */,
+				CBEA59BB2C97F06E00975096 /* DoTryCatchThrowsViewModel.swift in Sources */,
 				2D2FB0522B6522D20019EFED /* TransitionDemo.swift in Sources */,
 				CBCDBDC52C01C9BA00E26C77 /* PagerViewDemo.swift in Sources */,
 				2DD43F282BF87E6900218CDC /* CustomSliderDemo.swift in Sources */,
@@ -450,9 +476,11 @@
 				CBCDBDD72C03999500E26C77 /* LinearProgressViewDemo.swift in Sources */,
 				2D931AEA2B68035900622C75 /* AutomaticGrammarAgreement.swift in Sources */,
 				CB2FD6D02C0B27EF00105E40 /* DoubleExtensions.swift in Sources */,
+				CBEA59B92C97F06E00975096 /* DoTryCatchThrowsBootcamp.swift in Sources */,
 				CBCDBDBA2BFF986200E26C77 /* Model.swift in Sources */,
 				CBCDBDE02C0574AE00E26C77 /* Shimmer.swift in Sources */,
 				2D2FB05C2B665A3F0019EFED /* CustomTransitions.swift in Sources */,
+				CBEA59BA2C97F06E00975096 /* DoTryCatchThrowsManager.swift in Sources */,
 				CBCDBDE22C0577D500E26C77 /* StringExtensions.swift in Sources */,
 				2D2998F72BFA42590018057B /* Constants.swift in Sources */,
 				CBCDBDD52C035CCB00E26C77 /* LinearProgressViewModel.swift in Sources */,
