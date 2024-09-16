@@ -53,6 +53,10 @@
 		CBEA59C22C97F17700975096 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59BE2C97F17700975096 /* ImageDownloader.swift */; };
 		CBEA59C62C9895D400975096 /* AsyncAwaitBootCamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59C32C9895D400975096 /* AsyncAwaitBootCamp.swift */; };
 		CBEA59C72C9895D400975096 /* AsyncAwaitBootCampViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59C42C9895D400975096 /* AsyncAwaitBootCampViewModel.swift */; };
+		CBEA59CB2C98967700975096 /* AsyncLetBootCamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59C82C98967700975096 /* AsyncLetBootCamp.swift */; };
+		CBEA59CC2C98967700975096 /* AsyncLetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59C92C98967700975096 /* AsyncLetViewModel.swift */; };
+		CBEA59D02C98968700975096 /* TaskBootCamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59CD2C98968700975096 /* TaskBootCamp.swift */; };
+		CBEA59D12C98968700975096 /* TaskBootCampViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59CE2C98968700975096 /* TaskBootCampViewModel.swift */; };
 		CBFD34772C79E7DA00DFAD48 /* Binding.md in Resources */ = {isa = PBXBuildFile; fileRef = CBFD34762C79E7DA00DFAD48 /* Binding.md */; };
 		CBFD34782C79E7EE00DFAD48 /* State.md in Resources */ = {isa = PBXBuildFile; fileRef = CB05CF042C1EC48300EC2F42 /* State.md */; };
 /* End PBXBuildFile section */
@@ -104,6 +108,10 @@
 		CBEA59BE2C97F17700975096 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		CBEA59C32C9895D400975096 /* AsyncAwaitBootCamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncAwaitBootCamp.swift; sourceTree = "<group>"; };
 		CBEA59C42C9895D400975096 /* AsyncAwaitBootCampViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncAwaitBootCampViewModel.swift; sourceTree = "<group>"; };
+		CBEA59C82C98967700975096 /* AsyncLetBootCamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncLetBootCamp.swift; sourceTree = "<group>"; };
+		CBEA59C92C98967700975096 /* AsyncLetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncLetViewModel.swift; sourceTree = "<group>"; };
+		CBEA59CD2C98968700975096 /* TaskBootCamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskBootCamp.swift; sourceTree = "<group>"; };
+		CBEA59CE2C98968700975096 /* TaskBootCampViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskBootCampViewModel.swift; sourceTree = "<group>"; };
 		CBFD34762C79E7DA00DFAD48 /* Binding.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Binding.md; sourceTree = "<group>"; };
 		CBFD347A2C7B2D5B00DFAD48 /* StateObject.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = StateObject.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -363,6 +371,8 @@
 		CBEA59832C97EF1100975096 /* SwiftConcurrency */ = {
 			isa = PBXGroup;
 			children = (
+				CBEA59CF2C98968700975096 /* TaskBootcamp */,
+				CBEA59CA2C98967700975096 /* AsyncLet */,
 				CBEA59C52C9895D400975096 /* AsyncAwaitBootcamp */,
 				CBEA59BF2C97F17700975096 /* DownloadImage */,
 				CBEA59B82C97F06E00975096 /* DoTryCatchThrows */,
@@ -397,6 +407,24 @@
 				CBEA59C42C9895D400975096 /* AsyncAwaitBootCampViewModel.swift */,
 			);
 			path = AsyncAwaitBootcamp;
+			sourceTree = "<group>";
+		};
+		CBEA59CA2C98967700975096 /* AsyncLet */ = {
+			isa = PBXGroup;
+			children = (
+				CBEA59C82C98967700975096 /* AsyncLetBootCamp.swift */,
+				CBEA59C92C98967700975096 /* AsyncLetViewModel.swift */,
+			);
+			path = AsyncLet;
+			sourceTree = "<group>";
+		};
+		CBEA59CF2C98968700975096 /* TaskBootcamp */ = {
+			isa = PBXGroup;
+			children = (
+				CBEA59CD2C98968700975096 /* TaskBootCamp.swift */,
+				CBEA59CE2C98968700975096 /* TaskBootCampViewModel.swift */,
+			);
+			path = TaskBootcamp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,6 +517,7 @@
 				2DD43F262BF87D2E00218CDC /* CustomSlider.swift in Sources */,
 				CBEA59BB2C97F06E00975096 /* DoTryCatchThrowsViewModel.swift in Sources */,
 				2D2FB0522B6522D20019EFED /* TransitionDemo.swift in Sources */,
+				CBEA59D02C98968700975096 /* TaskBootCamp.swift in Sources */,
 				CBEA59C22C97F17700975096 /* ImageDownloader.swift in Sources */,
 				CBCDBDC52C01C9BA00E26C77 /* PagerViewDemo.swift in Sources */,
 				2DD43F282BF87E6900218CDC /* CustomSliderDemo.swift in Sources */,
@@ -506,6 +535,7 @@
 				CB2FD6D42C0C8B4500105E40 /* PagerDemoViewModel.swift in Sources */,
 				2D5C472A2B637C7F00E541C0 /* SwiftUILearningApp.swift in Sources */,
 				CBCDBDC02C00404800E26C77 /* CustomPageControl.swift in Sources */,
+				CBEA59D12C98968700975096 /* TaskBootCampViewModel.swift in Sources */,
 				CBCDBDD72C03999500E26C77 /* LinearProgressViewDemo.swift in Sources */,
 				CBEA59C12C97F17700975096 /* DownloadImageViewmodel.swift in Sources */,
 				CBEA59C72C9895D400975096 /* AsyncAwaitBootCampViewModel.swift in Sources */,
@@ -513,12 +543,14 @@
 				CBEA59C62C9895D400975096 /* AsyncAwaitBootCamp.swift in Sources */,
 				CB2FD6D02C0B27EF00105E40 /* DoubleExtensions.swift in Sources */,
 				CBEA59B92C97F06E00975096 /* DoTryCatchThrowsBootcamp.swift in Sources */,
+				CBEA59CB2C98967700975096 /* AsyncLetBootCamp.swift in Sources */,
 				CBCDBDBA2BFF986200E26C77 /* Model.swift in Sources */,
 				CBCDBDE02C0574AE00E26C77 /* Shimmer.swift in Sources */,
 				2D2FB05C2B665A3F0019EFED /* CustomTransitions.swift in Sources */,
 				CBEA59BA2C97F06E00975096 /* DoTryCatchThrowsManager.swift in Sources */,
 				CBCDBDE22C0577D500E26C77 /* StringExtensions.swift in Sources */,
 				2D2998F72BFA42590018057B /* Constants.swift in Sources */,
+				CBEA59CC2C98967700975096 /* AsyncLetViewModel.swift in Sources */,
 				CBCDBDD52C035CCB00E26C77 /* LinearProgressViewModel.swift in Sources */,
 				CBCDBDC32C01AD3900E26C77 /* ColorExtensions.swift in Sources */,
 			);
