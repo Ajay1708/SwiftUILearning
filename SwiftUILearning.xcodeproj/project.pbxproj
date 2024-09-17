@@ -62,6 +62,8 @@
 		CBEA59DB2C9930B400975096 /* ContinuationBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59D72C9930B400975096 /* ContinuationBootcamp.swift */; };
 		CBEA59DC2C9930B400975096 /* ContinuationBootCampManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59D82C9930B400975096 /* ContinuationBootCampManager.swift */; };
 		CBEA59DD2C9930B400975096 /* ContinuationBootcampViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59D92C9930B400975096 /* ContinuationBootcampViewModel.swift */; };
+		CBEA59E12C9930F600975096 /* ActorsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59DE2C9930F500975096 /* ActorsBootcamp.swift */; };
+		CBEA59E22C9930F600975096 /* ActorsBootcampManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59DF2C9930F500975096 /* ActorsBootcampManager.swift */; };
 		CBFD34772C79E7DA00DFAD48 /* Binding.md in Resources */ = {isa = PBXBuildFile; fileRef = CBFD34762C79E7DA00DFAD48 /* Binding.md */; };
 		CBFD34782C79E7EE00DFAD48 /* State.md in Resources */ = {isa = PBXBuildFile; fileRef = CB05CF042C1EC48300EC2F42 /* State.md */; };
 /* End PBXBuildFile section */
@@ -122,6 +124,8 @@
 		CBEA59D72C9930B400975096 /* ContinuationBootcamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuationBootcamp.swift; sourceTree = "<group>"; };
 		CBEA59D82C9930B400975096 /* ContinuationBootCampManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuationBootCampManager.swift; sourceTree = "<group>"; };
 		CBEA59D92C9930B400975096 /* ContinuationBootcampViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuationBootcampViewModel.swift; sourceTree = "<group>"; };
+		CBEA59DE2C9930F500975096 /* ActorsBootcamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorsBootcamp.swift; sourceTree = "<group>"; };
+		CBEA59DF2C9930F500975096 /* ActorsBootcampManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorsBootcampManager.swift; sourceTree = "<group>"; };
 		CBFD34762C79E7DA00DFAD48 /* Binding.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Binding.md; sourceTree = "<group>"; };
 		CBFD347A2C7B2D5B00DFAD48 /* StateObject.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = StateObject.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -381,6 +385,7 @@
 		CBEA59832C97EF1100975096 /* SwiftConcurrency */ = {
 			isa = PBXGroup;
 			children = (
+				CBEA59E02C9930F500975096 /* ActorsBootcamp */,
 				CBEA59DA2C9930B400975096 /* ContinuationBootcamp */,
 				CBEA59D42C99304F00975096 /* TaskGroupBootcamp */,
 				CBEA59CF2C98968700975096 /* TaskBootcamp */,
@@ -456,6 +461,15 @@
 				CBEA59D92C9930B400975096 /* ContinuationBootcampViewModel.swift */,
 			);
 			path = ContinuationBootcamp;
+			sourceTree = "<group>";
+		};
+		CBEA59E02C9930F500975096 /* ActorsBootcamp */ = {
+			isa = PBXGroup;
+			children = (
+				CBEA59DE2C9930F500975096 /* ActorsBootcamp.swift */,
+				CBEA59DF2C9930F500975096 /* ActorsBootcampManager.swift */,
+			);
+			path = ActorsBootcamp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -555,6 +569,7 @@
 				CBCDBDC52C01C9BA00E26C77 /* PagerViewDemo.swift in Sources */,
 				2DD43F282BF87E6900218CDC /* CustomSliderDemo.swift in Sources */,
 				CB2FD6CE2C0B20E200105E40 /* LinearProgressViewDemoViewModel.swift in Sources */,
+				CBEA59E22C9930F600975096 /* ActorsBootcampManager.swift in Sources */,
 				CBCDBDC92C02482E00E26C77 /* PagerViewModel.swift in Sources */,
 				CBEA59DB2C9930B400975096 /* ContinuationBootcamp.swift in Sources */,
 				2D2FB0452B64D05D0019EFED /* ButtonConfiguration.swift in Sources */,
@@ -562,6 +577,7 @@
 				2D2FB0582B6653EC0019EFED /* CustomTransitionDemo.swift in Sources */,
 				CB2FD6D22C0C897900105E40 /* PagerViewDemo2.swift in Sources */,
 				2D2998EE2BFA32020018057B /* LottieViewAnimationDemo.swift in Sources */,
+				CBEA59E12C9930F600975096 /* ActorsBootcamp.swift in Sources */,
 				2D2FB0502B64D5C70019EFED /* ButtonStyleDemo.swift in Sources */,
 				CBCDBDCE2C0316A300E26C77 /* LinearProgressView.swift in Sources */,
 				2D931AED2B68083F00622C75 /* CustomShapesDemo.swift in Sources */,
