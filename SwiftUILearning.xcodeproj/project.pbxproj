@@ -64,6 +64,8 @@
 		CBEA59DD2C9930B400975096 /* ContinuationBootcampViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59D92C9930B400975096 /* ContinuationBootcampViewModel.swift */; };
 		CBEA59E12C9930F600975096 /* ActorsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59DE2C9930F500975096 /* ActorsBootcamp.swift */; };
 		CBEA59E22C9930F600975096 /* ActorsBootcampManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59DF2C9930F500975096 /* ActorsBootcampManager.swift */; };
+		CBEA59E52C99324E00975096 /* Documentation.md in Resources */ = {isa = PBXBuildFile; fileRef = CBEA59E32C99324E00975096 /* Documentation.md */; };
+		CBEA59E62C99324E00975096 /* SwiftConcurrency.docc in Sources */ = {isa = PBXBuildFile; fileRef = CBEA59E42C99324E00975096 /* SwiftConcurrency.docc */; };
 		CBFD34772C79E7DA00DFAD48 /* Binding.md in Resources */ = {isa = PBXBuildFile; fileRef = CBFD34762C79E7DA00DFAD48 /* Binding.md */; };
 		CBFD34782C79E7EE00DFAD48 /* State.md in Resources */ = {isa = PBXBuildFile; fileRef = CB05CF042C1EC48300EC2F42 /* State.md */; };
 /* End PBXBuildFile section */
@@ -126,6 +128,8 @@
 		CBEA59D92C9930B400975096 /* ContinuationBootcampViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuationBootcampViewModel.swift; sourceTree = "<group>"; };
 		CBEA59DE2C9930F500975096 /* ActorsBootcamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorsBootcamp.swift; sourceTree = "<group>"; };
 		CBEA59DF2C9930F500975096 /* ActorsBootcampManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorsBootcampManager.swift; sourceTree = "<group>"; };
+		CBEA59E32C99324E00975096 /* Documentation.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Documentation.md; sourceTree = "<group>"; };
+		CBEA59E42C99324E00975096 /* SwiftConcurrency.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SwiftConcurrency.docc; sourceTree = "<group>"; };
 		CBFD34762C79E7DA00DFAD48 /* Binding.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Binding.md; sourceTree = "<group>"; };
 		CBFD347A2C7B2D5B00DFAD48 /* StateObject.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = StateObject.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -385,6 +389,8 @@
 		CBEA59832C97EF1100975096 /* SwiftConcurrency */ = {
 			isa = PBXGroup;
 			children = (
+				CBEA59E32C99324E00975096 /* Documentation.md */,
+				CBEA59E42C99324E00975096 /* SwiftConcurrency.docc */,
 				CBEA59E02C9930F500975096 /* ActorsBootcamp */,
 				CBEA59DA2C9930B400975096 /* ContinuationBootcamp */,
 				CBEA59D42C99304F00975096 /* TaskGroupBootcamp */,
@@ -542,6 +548,7 @@
 				2D5C47312B637C8100E541C0 /* Preview Assets.xcassets in Resources */,
 				2D2998F52BFA406C0018057B /* confetti.json in Resources */,
 				2D5C472E2B637C8100E541C0 /* Assets.xcassets in Resources */,
+				CBEA59E52C99324E00975096 /* Documentation.md in Resources */,
 				2D2998F22BFA3A440018057B /* lockerOnboarding.lottie in Resources */,
 				CBFD34772C79E7DA00DFAD48 /* Binding.md in Resources */,
 			);
@@ -582,6 +589,7 @@
 				CBCDBDCE2C0316A300E26C77 /* LinearProgressView.swift in Sources */,
 				2D931AED2B68083F00622C75 /* CustomShapesDemo.swift in Sources */,
 				2DCC84C22BF99F7900991C3A /* FloatExtensions.swift in Sources */,
+				CBEA59E62C99324E00975096 /* SwiftConcurrency.docc in Sources */,
 				CB2FD6D42C0C8B4500105E40 /* PagerDemoViewModel.swift in Sources */,
 				2D5C472A2B637C7F00E541C0 /* SwiftUILearningApp.swift in Sources */,
 				CBCDBDC02C00404800E26C77 /* CustomPageControl.swift in Sources */,
