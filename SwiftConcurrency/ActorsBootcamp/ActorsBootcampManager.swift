@@ -21,6 +21,10 @@ class MyDataManager {
 
     /// DispatchQueue solved data race because we are asynchronously waiting for one thread to complete the task before another thread proceeds
     func getRandomData1(completionHandler: @escaping (_ title: String?) -> Void) {
+        // Since we are using async block and we can't return out of async environment we are using completion handlers to pass the output randomElement
+        
+        
+        // When two different threads are trying to call this getRandomData1 function it need to asynchronously wait for the other thread to complete the task because those threads are lining up in the queue
         lock.async { [weak self] in
             guard let self else {return}
             self.data.append(UUID().uuidString)

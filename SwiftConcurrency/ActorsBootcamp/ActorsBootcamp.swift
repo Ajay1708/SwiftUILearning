@@ -9,7 +9,7 @@ import SwiftUI
 /// `Actors` are thread safe becuase we need to await in order to get into actor. All the actions inside the actor are isolated to itself.
 ///  If you ever want to do something which does not need to be isolated to the actor we simply mark it as nonisolated
 ///
-/// Actors solve the problem `data race` i.e.  Two different threads are accessing the same object in memory and  at least one of them is performing the write operation.
+/// Actors solve the problem `data race` i.e.  Two different threads are accessing the same object in heap memory and  at least one of them is performing the write operation.
 ///
 /// Before actors we use `DispatchQueues` which we often called `locks` to solve `data race`
 struct ActorsBootcamp: View {
