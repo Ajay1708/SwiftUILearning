@@ -33,6 +33,8 @@
 		CB2FD6D02C0B27EF00105E40 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FD6CF2C0B27EF00105E40 /* DoubleExtensions.swift */; };
 		CB2FD6D22C0C897900105E40 /* PagerViewDemo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FD6D12C0C897900105E40 /* PagerViewDemo2.swift */; };
 		CB2FD6D42C0C8B4500105E40 /* PagerDemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FD6D32C0C8B4500105E40 /* PagerDemoViewModel.swift */; };
+		CB4F0ABC2CA6AB3400EE604B /* Documentation.md in Resources */ = {isa = PBXBuildFile; fileRef = CB4F0ABB2CA6AB3400EE604B /* Documentation.md */; };
+		CB4F0ABE2CA6B53800EE604B /* AppStorageDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F0ABD2CA6B53800EE604B /* AppStorageDemo.swift */; };
 		CBCDBDB82BFF82D500E26C77 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDB72BFF82D500E26C77 /* PagerView.swift */; };
 		CBCDBDBA2BFF986200E26C77 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDB92BFF986200E26C77 /* Model.swift */; };
 		CBCDBDBE2BFF9E2F00E26C77 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CBCDBDBD2BFF9E2F00E26C77 /* Kingfisher */; };
@@ -77,6 +79,8 @@
 		CB2FD6CF2C0B27EF00105E40 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		CB2FD6D12C0C897900105E40 /* PagerViewDemo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewDemo2.swift; sourceTree = "<group>"; };
 		CB2FD6D32C0C8B4500105E40 /* PagerDemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerDemoViewModel.swift; sourceTree = "<group>"; };
+		CB4F0ABB2CA6AB3400EE604B /* Documentation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Documentation.md; sourceTree = "<group>"; };
+		CB4F0ABD2CA6B53800EE604B /* AppStorageDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageDemo.swift; sourceTree = "<group>"; };
 		CBCDBDB72BFF82D500E26C77 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
 		CBCDBDB92BFF986200E26C77 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CBCDBDBF2C00404800E26C77 /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 		2D5C471D2B637C7F00E541C0 = {
 			isa = PBXGroup;
 			children = (
+				CB4F0AB72CA6826800EE604B /* DataBase */,
 				2D2998F32BFA3A930018057B /* LottieResource */,
 				2D5C47282B637C7F00E541C0 /* SwiftUILearning */,
 				2D5C47272B637C7F00E541C0 /* Products */,
@@ -260,6 +265,31 @@
 				CBFD347A2C7B2D5B00DFAD48 /* StateObject.md */,
 			);
 			path = Documentation;
+			sourceTree = "<group>";
+		};
+		CB4F0AB72CA6826800EE604B /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				CB4F0AB92CA6AADE00EE604B /* CoreData */,
+				CB4F0AB82CA6AAD400EE604B /* UserDefaults */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		CB4F0AB82CA6AAD400EE604B /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				CB4F0ABB2CA6AB3400EE604B /* Documentation.md */,
+				CB4F0ABD2CA6B53800EE604B /* AppStorageDemo.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		CB4F0AB92CA6AADE00EE604B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		CBCDBDB62BFF82A100E26C77 /* Lottie */ = {
@@ -413,6 +443,7 @@
 				2D5C47312B637C8100E541C0 /* Preview Assets.xcassets in Resources */,
 				2D2998F52BFA406C0018057B /* confetti.json in Resources */,
 				2D5C472E2B637C8100E541C0 /* Assets.xcassets in Resources */,
+				CB4F0ABC2CA6AB3400EE604B /* Documentation.md in Resources */,
 				2D2998F22BFA3A440018057B /* lockerOnboarding.lottie in Resources */,
 				CBFD34772C79E7DA00DFAD48 /* Binding.md in Resources */,
 			);
@@ -426,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D2FB04C2B64D1510019EFED /* CustomButtonDemo.swift in Sources */,
+				CB4F0ABE2CA6B53800EE604B /* AppStorageDemo.swift in Sources */,
 				2D931AEF2B68A4D600622C75 /* CustomShapes.swift in Sources */,
 				2DCC84C52BF9DC0F00991C3A /* LottieView.swift in Sources */,
 				CBCDBDB82BFF82D500E26C77 /* PagerView.swift in Sources */,
