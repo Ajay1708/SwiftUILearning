@@ -11,7 +11,7 @@ class MyDataManager {
     private init() {}
     /// Shared data
     var data: [String] = []
-    let lock = DispatchQueue(label: "com.MyApp.MyDataManager")
+    let lock = DispatchQueue(label: "com.MyApp.MyDataManager") // The reason for adding label here is it will come up in the debug logs
     /// Data race occurs at line no 16
     func getRandomData() -> String? {
         data.append(UUID().uuidString)
@@ -47,7 +47,8 @@ actor MyActorDataManager {
         return data.randomElement()
     }
     
-    /// This function is not accessing shared data so there is no need for the function to be isolated to the actor. Hence we are declaring it as nonisolated.
+    /// By default all the properties and methods are isolated to the actor that they are in.
+    /// getNewData method is not accessing shared data so there is no need for the function to be isolated to the actor. Hence we are declaring it as nonisolated.
     /// Nonisolated methods or properties are non asynchronous
     nonisolated func getNewData() -> String {
         "New String"
