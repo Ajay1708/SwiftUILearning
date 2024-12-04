@@ -13,28 +13,33 @@ struct PagerViewDemo: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        ZStack {
-            Color(hex: "#272239").ignoresSafeArea(.all)
-            
-            PagerView(
-                selectedPage: $viewModel.pagerViewModel.selectedPage,
-                totalNoofPages: viewModel.pagerViewModel.totalNoofPages,
-                animationDuration: viewModel.pagerViewModel.animationDuration
-            ) {
-                ForEach(Array(viewModel.stories.enumerated()), id: \.offset) { offset, story in
-                    createPage(from: story)
-                        .tag(offset)
+        if #available(iOS 16.0, *) {
+            ZStack {
+                Color(hex: "#272239").ignoresSafeArea(.all)
+                
+                PagerView(
+                    selectedPage: $viewModel.pagerViewModel.selectedPage,
+                    totalNoofPages: viewModel.pagerViewModel.totalNoofPages,
+                    animationDuration: viewModel.pagerViewModel.animationDuration
+                ) {
+                    ForEach(Array(viewModel.stories.enumerated()), id: \.offset) { offset, story in
+                        createPage(from: story)
+                            .tag(offset)
+                    }
+                }
+                .ignoresSafeArea()
+                
+                if viewModel.showShimmerAnimation {
+                    shimmeringView
                 }
             }
-            .ignoresSafeArea()
-            
-            if viewModel.showShimmerAnimation {
-                shimmeringView
+            .toolbar(.hidden, for: .automatic)
+            .onAppear {
+                viewModel.fetchStories()
             }
-        }
-        .toolbar(.hidden, for: .automatic)
-        .onAppear {
-            viewModel.fetchStories()
+        } else {
+            // Fallback on earlier versions
+            EmptyView()
         }
         
     }

@@ -33,6 +33,7 @@
 		CB2FD6D02C0B27EF00105E40 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FD6CF2C0B27EF00105E40 /* DoubleExtensions.swift */; };
 		CB2FD6D22C0C897900105E40 /* PagerViewDemo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FD6D12C0C897900105E40 /* PagerViewDemo2.swift */; };
 		CB2FD6D42C0C8B4500105E40 /* PagerDemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2FD6D32C0C8B4500105E40 /* PagerDemoViewModel.swift */; };
+		CB75D9FC2CFC98BD00A3B1AA /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB75D9FB2CFC98BD00A3B1AA /* CustomSegmentedControl.swift */; };
 		CBCDBDB82BFF82D500E26C77 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDB72BFF82D500E26C77 /* PagerView.swift */; };
 		CBCDBDBA2BFF986200E26C77 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCDBDB92BFF986200E26C77 /* Model.swift */; };
 		CBCDBDBE2BFF9E2F00E26C77 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CBCDBDBD2BFF9E2F00E26C77 /* Kingfisher */; };
@@ -77,6 +78,7 @@
 		CB2FD6CF2C0B27EF00105E40 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		CB2FD6D12C0C897900105E40 /* PagerViewDemo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewDemo2.swift; sourceTree = "<group>"; };
 		CB2FD6D32C0C8B4500105E40 /* PagerDemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerDemoViewModel.swift; sourceTree = "<group>"; };
+		CB75D9FB2CFC98BD00A3B1AA /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		CBCDBDB72BFF82D500E26C77 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
 		CBCDBDB92BFF986200E26C77 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CBCDBDBF2C00404800E26C77 /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				2D2FB05E2B66A8E50019EFED /* MatchedGeometryDemo.swift */,
+				CB75D9FB2CFC98BD00A3B1AA /* CustomSegmentedControl.swift */,
 			);
 			path = MatchedGeometry;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				CBCDBDE02C0574AE00E26C77 /* Shimmer.swift in Sources */,
 				2D2FB05C2B665A3F0019EFED /* CustomTransitions.swift in Sources */,
 				CBCDBDE22C0577D500E26C77 /* StringExtensions.swift in Sources */,
+				CB75D9FC2CFC98BD00A3B1AA /* CustomSegmentedControl.swift in Sources */,
 				2D2998F72BFA42590018057B /* Constants.swift in Sources */,
 				CBCDBDD52C035CCB00E26C77 /* LinearProgressViewModel.swift in Sources */,
 				CBCDBDC32C01AD3900E26C77 /* ColorExtensions.swift in Sources */,
