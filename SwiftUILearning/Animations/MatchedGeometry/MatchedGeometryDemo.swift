@@ -43,7 +43,7 @@ struct MatchedGeometryDemo1: View {
         
     }
 }
-#Preview {
+#Preview("MatchedGeometryDemo1") {
     return MatchedGeometryDemo1()
 }
 
@@ -100,7 +100,7 @@ struct MatchedGeometryDemo2: View {
         .padding()
     }
 }
-#Preview {
+#Preview("MatchedGeometryDemo2") {
     return MatchedGeometryDemo2()
 
 }
@@ -134,7 +134,7 @@ struct MatchedGeometryDemo3: View {
                 .matchedGeometryEffect(id: profileIcon, in: nameSpace)
                 .frame(width: 80, height: 80)
                 .onTapGesture {
-                    withAnimation(.easeInOut) {
+                    withAnimation(.smooth) {
                         isExpanded.toggle()
                     }
                 }
@@ -158,7 +158,7 @@ struct MatchedGeometryDemo3: View {
                 .matchedGeometryEffect(id: profileIcon, in: nameSpace)
                 .frame(width: 130, height: 130)
                 .onTapGesture {
-                    withAnimation(.easeInOut) {
+                    withAnimation(.smooth) {
                         isExpanded.toggle()
                     }
                 }
@@ -184,6 +184,6 @@ struct MatchedGeometryDemo3: View {
         }
     }
 }
-#Preview {
+#Preview("MatchedGeometryDemo3") {
     MatchedGeometryDemo3()
 }
